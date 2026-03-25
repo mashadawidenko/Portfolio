@@ -69,14 +69,40 @@ function AccordionItem({ item }: { item: ExperienceItem }) {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-8 md:py-10 cursor-pointer text-left"
       >
-        {/* ОДНА ГОРИЗОНТАЛЬНАЯ ЛИНИЯ НА ДЕСКТОПЕ */}
-        <div className="flex items-center justify-between gap-8">
+        {/* МОБИЛЬНЫЙ: Дата + Плюс в одной строке */}
+        <div className="flex items-start justify-between mb-2 md:!hidden">
+          {/* Дата и локация */}
+          <div className="w-[200px] shrink-0">
+            <p className="font-['Instrument_Sans',sans-serif] text-[#454545] text-[16px] leading-[24px]">
+              {item.dateRange}
+            </p>
+            <p className="font-['Instrument_Sans',sans-serif] text-[#454545] text-[16px] leading-[24px]">
+              {item.location}
+            </p>
+          </div>
           
-          {/* ЛЕВАЯ ЧАСТЬ: Дата + Описание */}
+          {/* Плюс (справа на мобильном) */}
+          <div className="shrink-0">
+            {isOpen ? <Minus size={24} /> : <Plus size={24} />}
+          </div>
+        </div>
+
+        {/* МОБИЛЬНЫЙ: Название и роль под датой */}
+        <div className="md:hidden mt-2">
+          <p className="font-['Instrument_Sans',sans-serif] font-medium text-[#161616] text-[18px] leading-[24px] tracking-[-1px] mb-1">
+            {item.title}
+          </p>
+          <p className="font-['Instrument_Sans',sans-serif] text-[#464646] text-[16px] leading-[24px]">
+            {item.role}
+          </p>
+        </div>
+
+        {/* ДЕСКТОП: Всё в одну горизонтальную строку */}
+        <div className="hidden md:flex items-center justify-between gap-8">
+          {/* Дата + Описание */}
           <div className="flex gap-16 lg:gap-24 flex-1">
-            
-            {/* 1. Дата (фиксированная ширина 240px) */}
-            <div className="w-[200px] md:w-[240px] shrink-0">
+            {/* Дата */}
+            <div className="w-[240px] shrink-0">
               <p className="font-['Instrument_Sans',sans-serif] text-[#454545] text-[16px] leading-[24px]">
                 {item.dateRange}
               </p>
@@ -85,9 +111,9 @@ function AccordionItem({ item }: { item: ExperienceItem }) {
               </p>
             </div>
 
-            {/* 2. Название и роль (занимает остальное место) */}
+            {/* Название и роль */}
             <div className="flex flex-col gap-2 flex-1">
-              <p className="font-['Instrument_Sans',sans-serif] font-medium text-[#161616] text-[18px] md:text-[20px] leading-[24px] tracking-[-1px]">
+              <p className="font-['Instrument_Sans',sans-serif] font-medium text-[#161616] text-[20px] leading-[24px] tracking-[-1px]">
                 {item.title}
               </p>
               <p className="font-['Instrument_Sans',sans-serif] text-[#464646] text-[16px] leading-[24px]">
@@ -96,7 +122,7 @@ function AccordionItem({ item }: { item: ExperienceItem }) {
             </div>
           </div>
 
-          {/* 3. Плюс (всегда справа) */}
+          {/* Плюс (справа на десктопе) */}
           <div className="shrink-0">
             {isOpen ? <Minus size={24} /> : <Plus size={24} />}
           </div>
@@ -112,7 +138,8 @@ function AccordionItem({ item }: { item: ExperienceItem }) {
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="pb-10 md:pl-[304px]">
+            {/* Отступ = ширине колонки с датой (240px) */}
+            <div className="pb-10 pl-0 md:pl-[304px]">
               {item.projectInfo && (
                 <div className="mb-6 flex flex-col gap-1">
                   {item.projectInfo.map((info) => (

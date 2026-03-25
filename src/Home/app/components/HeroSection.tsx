@@ -36,6 +36,9 @@ export function HeroSection() {
           .hero-main-container {
             flex-direction: row !important;
           }
+          .mobile-only-status {
+            display: none !important;
+          }
         }
         @media (max-width: 1023px) {
           .desktop-right-column {
@@ -55,6 +58,20 @@ export function HeroSection() {
         {/* ЛЕВАЯ КОЛОНКА - ТЕКСТ */}
         <div className="flex flex-col gap-10 md:gap-14 max-w-[810px] w-full lg:w-auto lg:flex-1">
           
+          {/* 👇 НОВЫЙ БЛОК - СТАТУС ТОЛЬКО ДЛЯ МОБИЛЬНЫХ (в самом верху) 👇 */}
+          <AnimatedSection delay={0.1}>
+            <div className="mobile-only-status flex gap-2.5 items-center mb-4 md:mb-6">
+              <div className="relative shrink-0 size-3.5">
+                <div className="absolute inset-0 rounded-full bg-[#97E519]" />
+                <div className="absolute -inset-2 rounded-full bg-[#E1FFC7] opacity-40 animate-pulse" />
+              </div>
+              <span className="font-['Instrument_Sans',sans-serif] tracking-[1px] text-[#121212] text-[14px] md:text-[16px] whitespace-nowrap">
+                Available for work
+              </span>
+            </div>
+          </AnimatedSection>
+          {/* 👆 Конец нового блока 👆 */}
+
           <AnimatedSection>
             <div className="flex flex-col gap-4 md:gap-7">
               <div className="mb-4 md:mb-6 shrink-0">
@@ -125,15 +142,8 @@ export function HeroSection() {
                 </button>
               </div>
 
-              <div className="flex gap-2.5 items-center">
-                <div className="relative shrink-0 size-3.5">
-                  <div className="absolute inset-0 rounded-full bg-[#97E519]" />
-                  <div className="absolute -inset-2 rounded-full bg-[#E1FFC7] opacity-40 animate-pulse" />
-                </div>
-                <span className="font-['Instrument_Sans',sans-serif] tracking-[1px] text-[#121212] text-[14px] md:text-[16px] whitespace-nowrap">
-                  Available for work
-                </span>
-              </div>
+              {/* ⚠️ УДАЛИЛА ОТСЮДА БЛОК СО СТАТУСОМ (чтобы не дублировался) */}
+
             </div>
           </AnimatedSection>
 

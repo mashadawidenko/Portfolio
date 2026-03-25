@@ -16,7 +16,7 @@ export function AnimatedSection({ children, className = "", delay = 0 }: Animate
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.7, delay, ease: "easeOut" }}
+      transition={{ duration: 0.9, delay, ease: "easeOut" }}
       className={className}
     >
       {children}

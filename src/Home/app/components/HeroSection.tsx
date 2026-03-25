@@ -73,27 +73,29 @@ export function HeroSection() {
           {/* 👆 Конец нового блока 👆 */}
 
           <AnimatedSection>
-            <div className="flex flex-col gap-4 md:gap-7">
-              <div className="mb-4 md:mb-6 shrink-0">
-                <img 
-                  src={ellipseImg} 
-                  alt="Decorative ellipse" 
-                  className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] object-contain" 
-                />
-              </div>
-              <p className="font-['Instrument_Sans',sans-serif] text-[#171717] text-[36px] md:text-[50px] lg:text-[60px] leading-[1.15] tracking-[-2px]">
-                I'm Maria,
-              </p>
-              <p className="font-['Instrument_Sans',sans-serif] text-[#AAAAAA] text-[36px] md:text-[50px] lg:text-[60px] leading-[1.15] tracking-[-2px]">
-                a{" "}
-                <span className="text-[#171717]">UI/UX Designer</span>{" "}
-                working on{" "}
-                <span className="text-[#171717]">web</span>{" "}
-                and{" "}
-                <span className="text-[#171717]">mobile products</span>.
-              </p>
-            </div>
-          </AnimatedSection>
+  <div className="flex flex-col gap-4 md:gap-7">
+    <div className="flex items-center gap-4 md:gap-6">
+      <div className="shrink-0">
+        <img 
+          src={ellipseImg} 
+          alt="Decorative ellipse" 
+          className="w-[60px] h-[60px] md:w-[80px] md:h-[80px] object-contain" 
+        />
+      </div>
+      <p className="font-['Instrument_Sans',sans-serif] text-[#171717] text-[36px] md:text-[50px] lg:text-[60px] leading-[1.15] tracking-[-2px]">
+        I'm Maria,
+      </p>
+    </div>
+    <p className="font-['Instrument_Sans',sans-serif] text-[#AAAAAA] text-[36px] md:text-[50px] lg:text-[60px] leading-[1.15] tracking-[-2px]">
+      a{" "}
+      <span className="text-[#171717]">UI/UX Designer</span>{" "}
+      working on{" "}
+      <span className="text-[#171717]">web</span>{" "}
+      and{" "}
+      <span className="text-[#171717]">mobile products</span>.
+    </p>
+  </div>
+</AnimatedSection>
 
           <AnimatedSection delay={0.2}>
             <div className="flex gap-4 items-start">

@@ -28,20 +28,20 @@ function ProjectCard({ image, title, tags, description, imageClass = "" }: Proje
         />
       </div>
       <div className="flex flex-col gap-4">
-        <h3 className="font-['Instrument_Sans',sans-serif] font-medium text-[#161616] text-[18px] md:text-[20px] leading-[24px] tracking-[-1px]">
+        <h3 className="font-['Instrument_Sans',sans-serif] font-medium text-[#161616] text-[20px] md:text-[24px] leading-[32px] tracking-[-1px]">
           {title}
         </h3>
         <div className="flex flex-wrap gap-2.5">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="px-5 py-1.5 rounded-full border border-[#323232]/40 font-['Instrument_Sans',sans-serif] text-[#161616] text-[16px] leading-[28px] whitespace-nowrap"
+              className="px-5 py-1.5 rounded-full border border-[#323232]/32 font-['Instrument_Sans',sans-serif] text-[#161616] text-[14px] leading-[28px] whitespace-nowrap"
             >
               {tag}
             </span>
           ))}
         </div>
-        <p className="font-['Instrument_Sans',sans-serif] text-[#414141] text-[14px] leading-[22px]">
+        <p className="font-['Instrument_Sans',sans-serif] text-[#414141] text-[18px] leading-[30px]">
           {description}
         </p>
       </div>
@@ -108,7 +108,7 @@ export function ProjectsSection() {
 
   return (
     <section className="py-16 md:py-20">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[160px]">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[0px]">
         
         <div className="flex flex-col sm:flex-row gap-10 sm:gap-16">
           
@@ -137,7 +137,7 @@ export function ProjectsSection() {
           </div>
 
           {/* ПРАВАЯ КОЛОНКА - СПИСОК ПРОЕКТОВ */}
-          <div ref={projectsContainerRef} className="flex-1 flex flex-col gap-10">
+          <div ref={projectsContainerRef} className="max-w-[1000px] flex-1 flex flex-col gap-20 ml-auto">
             <ProjectCard
               image={imgRectangle1}
               title="iMerch App for JTI (Japan Tobacco International)"

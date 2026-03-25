@@ -16,7 +16,7 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     id: 1,
-    dateRange: "Sep 2025 \u2014 Dec 2025",
+    dateRange: "Sep 2025 — Dec 2025",
     location: "Russia, Moscow",
     title: "Invoice iOS, (freelance for international market)",
     role: "Role: UI UX Designer",
@@ -38,7 +38,7 @@ const experiences: ExperienceItem[] = [
   },
   {
     id: 2,
-    dateRange: "Feb 2025 \u2014 Sep 2025",
+    dateRange: "Feb 2025 — Sep 2025",
     location: "Russia, Moscow",
     title: "JTI - Japan Tobacco International (Contract)",
     role: "Role: UI UX Designer",
@@ -67,28 +67,39 @@ function AccordionItem({ item }: { item: ExperienceItem }) {
     <div className="border-t border-[#dadada]">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-8 md:py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 cursor-pointer text-left"
+        className="w-full py-8 md:py-10 cursor-pointer text-left"
       >
-        <div className="flex flex-col md:flex-row items-start md:items-start gap-4 md:gap-0 md:w-[50%]">
-          <div className="md:w-[240px] shrink-0">
-            <p className="font-['Instrument_Sans',sans-serif] text-[#454545] text-[16px] leading-[24px]">
-              {item.dateRange}
-            </p>
-            <p className="font-['Instrument_Sans',sans-serif] text-[#454545] text-[16px] leading-[24px]">
-              {item.location}
-            </p>
+        {/* ОДНА ГОРИЗОНТАЛЬНАЯ ЛИНИЯ НА ДЕСКТОПЕ */}
+        <div className="flex items-center justify-between gap-8">
+          
+          {/* ЛЕВАЯ ЧАСТЬ: Дата + Описание */}
+          <div className="flex gap-16 lg:gap-24 flex-1">
+            
+            {/* 1. Дата (фиксированная ширина 240px) */}
+            <div className="w-[200px] md:w-[240px] shrink-0">
+              <p className="font-['Instrument_Sans',sans-serif] text-[#454545] text-[16px] leading-[24px]">
+                {item.dateRange}
+              </p>
+              <p className="font-['Instrument_Sans',sans-serif] text-[#454545] text-[16px] leading-[24px]">
+                {item.location}
+              </p>
+            </div>
+
+            {/* 2. Название и роль (занимает остальное место) */}
+            <div className="flex flex-col gap-2 flex-1">
+              <p className="font-['Instrument_Sans',sans-serif] font-medium text-[#161616] text-[18px] md:text-[20px] leading-[24px] tracking-[-1px]">
+                {item.title}
+              </p>
+              <p className="font-['Instrument_Sans',sans-serif] text-[#464646] text-[16px] leading-[24px]">
+                {item.role}
+              </p>
+            </div>
           </div>
-          <div className="flex flex-col gap-2 md:ml-auto">
-            <p className="font-['Instrument_Sans',sans-serif] font-medium text-[#161616] text-[18px] md:text-[20px] leading-[24px] tracking-[-1px]">
-              {item.title}
-            </p>
-            <p className="font-['Instrument_Sans',sans-serif] text-[#464646] text-[16px] leading-[24px]">
-              {item.role}
-            </p>
+
+          {/* 3. Плюс (всегда справа) */}
+          <div className="shrink-0">
+            {isOpen ? <Minus size={24} /> : <Plus size={24} />}
           </div>
-        </div>
-        <div className="shrink-0">
-          {isOpen ? <Minus size={24} /> : <Plus size={24} />}
         </div>
       </button>
 
@@ -101,7 +112,7 @@ function AccordionItem({ item }: { item: ExperienceItem }) {
             transition={{ duration: 0.4, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="pb-10 md:pl-[240px]">
+            <div className="pb-10 md:pl-[304px]">
               {item.projectInfo && (
                 <div className="mb-6 flex flex-col gap-1">
                   {item.projectInfo.map((info) => (
@@ -130,7 +141,7 @@ function AccordionItem({ item }: { item: ExperienceItem }) {
 export function WorkExperience() {
   return (
     <section className="py-16 md:py-20">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[160px]">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[0px]">
         <AnimatedSection>
           <h2 className="font-['Instrument_Sans',sans-serif] font-medium text-black text-[28px] md:text-[32px] leading-[40px] capitalize mb-6">
             Work Experience

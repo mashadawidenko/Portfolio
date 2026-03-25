@@ -154,7 +154,7 @@ export function HeroSection() {
         {/* ПРАВАЯ КОЛОНКА - КНОПКИ */}
         <div className="desktop-right-column w-[280px] shrink-0 ml-auto">
           <AnimatedSection delay={0.25}>
-            <div className="desktop-only-buttons flex flex-col gap-5">
+            <div className="desktop-only-buttons flex flex-col gap-16">
               <div className="flex gap-2.5 items-center">
                 <div className="relative shrink-0 size-3.5">
                   <div className="absolute inset-0 rounded-full bg-[#97E519]" />

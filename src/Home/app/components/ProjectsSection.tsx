@@ -41,7 +41,7 @@ function ProjectCard({ image, title, tags, description, imageClass = "" }: Proje
             </span>
           ))}
         </div>
-        <p className="font-['Instrument_Sans',sans-serif] text-[#414141] text-[18px] leading-[30px]">
+        <p className="font-['Instrument_Sans',sans-serif] text-[#414141] text-[14px] md:!text-[18px] leading-[30px]">
           {description}
         </p>
       </div>

@@ -168,7 +168,7 @@ function AccordionItem({ item }: { item: ExperienceItem }) {
 export function WorkExperience() {
   return (
     <section className="py-16 md:py-20">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[0px]">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[160px]">
         <AnimatedSection>
           <h2 className="font-['Instrument_Sans',sans-serif] font-medium text-black text-[28px] md:text-[32px] leading-[40px] capitalize mb-6">
             Work Experience

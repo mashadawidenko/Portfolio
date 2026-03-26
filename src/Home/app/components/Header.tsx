@@ -3,11 +3,11 @@ import svgPaths from "../../imports/svg-7wmd1n95bc";
 export function Header() {
   return (
     <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-[#dadada]">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-0 py-4 md:py-8 flex items-center justify-between">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-0 py-4 md:py-8 flex items-center justify-between lg:px-[160px]">
         <div className="flex gap-2.5 items-center">
           <div className="relative shrink-0 size-5">
             <svg className="absolute block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 20 20">
-              <path d={svgPaths.p3e673e00} fill="#BAE920" />
+              <path d={svgPaths.p3e673e00} fill="#4294FF" />
             </svg>
           </div>
           <span className="font-['Instrument_Sans',sans-serif] font-medium text-[#3d3d3d] text-[16px] leading-[28px] whitespace-nowrap">

@@ -47,7 +47,7 @@ const handleSubmit = (e: React.FormEvent) => {
   };
 
   return (
-    <section className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 pt-40 md:pt-44 pb-24 md:pb-40">
+    <section className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 pt-24 md:pt-44 pb-32 md:pb-40 lg:px-[160px]">
       
       <style>{`
 
@@ -193,7 +193,7 @@ const handleSubmit = (e: React.FormEvent) => {
         <div className="desktop-right-column md:pt-14 w-[280px] shrink-0 ml-auto">
           <AnimatedSection delay={0.25}>
             <div className="desktop-only-buttons flex flex-col gap-16">
-              <div className="flex gap-2.5 items-center">
+              <div className="flex gap-2.5 items-center justify-center w-full">
                 <div className="relative shrink-0 size-3.5">
                   <div className="absolute inset-0 rounded-full bg-[#97E519]" />
                   <div className="absolute -inset-2 rounded-full bg-[#E1FFC7] opacity-40 animate-pulse" />
@@ -205,7 +205,7 @@ const handleSubmit = (e: React.FormEvent) => {
               <div className="flex flex-col gap-3">
                 <button 
                   onClick={handleBookCall}
-                  className="px-6 py-2.5 bg-[#121212] text-white font-['Instrument_Sans',sans-serif] text-[16px] rounded-lg hover:bg-[#1a1a1a] transition-all duration-200"
+                  className="px-6 py-2.5 bg-[#121212] text-white font-['Instrument_Sans',sans-serif] text-[16px] rounded-lg hover:bg-[#282828] transition-all duration-200"
                 >
                   Request a Project
                 </button>

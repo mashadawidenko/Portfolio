@@ -113,7 +113,7 @@ function SkillBadge({ name, icon }: { name: string; icon: React.ReactNode }) {
 
 export function SkillsMarquee() {
   return (
-    <div className="w-full overflow-hidden py-8 border border-[none]">
+    <div className="w-full overflow-hidden py-4 md:py-8 border border-[none]">
       <motion.div
         className="flex gap-8"
         animate={{ x: ["0%", "-50%"] }}

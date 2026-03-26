@@ -168,7 +168,7 @@ export function ChatSection() {
                 <span className="font-['Instrument_Sans',sans-serif] text-[#ACACAC] text-[12px] leading-[16px]">
                   You
                 </span>
-                <div className="bg-[#8ecf25] rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-[2px] px-4 py-3">
+                <div className="bg-[#4294FF] rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-[2px] px-4 py-3">
                   <p className="font-['Instrument_Sans',sans-serif] font-medium text-white text-[16px] leading-[24px] whitespace-nowrap">
                     {messages[2].text}
                   </p>

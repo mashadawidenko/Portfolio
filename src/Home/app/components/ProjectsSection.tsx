@@ -20,7 +20,7 @@ interface ProjectCardProps {
 function ProjectCard({ image, title, tags, description, imageClass = "" }: ProjectCardProps) {
   return (
     <AnimatedSection className="flex flex-col gap-8 flex-1 min-w-[280px]">
-      <div className="h-[220px] md:h-[262px] lg:h-[600px] xl:h-[650px] relative overflow-hidden rounded-lg">
+      <div className="h-[220px] md:h-[262px] lg:h-[470px] xl:h-[530px] relative overflow-hidden rounded-lg">
         <img
           alt={title}
           className={`absolute inset-0 max-w-none object-cover size-full ${imageClass}`}
@@ -108,7 +108,7 @@ export function ProjectsSection() {
 
   return (
     <section className="py-16 md:py-20">
-      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[0px]">
+      <div className="max-w-[1600px] mx-auto px-6 md:px-10 lg:px-[160px]">
         
         <div className="flex flex-col sm:flex-row gap-10 sm:gap-16">
           
@@ -137,7 +137,7 @@ export function ProjectsSection() {
           </div>
 
           {/* ПРАВАЯ КОЛОНКА - СПИСОК ПРОЕКТОВ */}
-          <div ref={projectsContainerRef} className="max-w-[1000px] flex-1 flex flex-col gap-20 ml-auto">
+          <div ref={projectsContainerRef} className="max-w-[800px] flex-1 flex flex-col gap-24 ml-auto">
             <ProjectCard
               image={imgRectangle1}
               title="iMerch App for JTI (Japan Tobacco International)"

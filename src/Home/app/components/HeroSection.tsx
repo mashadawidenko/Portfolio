@@ -47,7 +47,7 @@ const handleSubmit = (e: React.FormEvent) => {
   };
 
   return (
-    <section className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 pt-40 md:pt-60 pb-24 md:pb-40">
+    <section className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-16 pt-40 md:pt-44 pb-24 md:pb-40">
       
       <style>{`
 

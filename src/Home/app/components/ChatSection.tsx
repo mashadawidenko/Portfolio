@@ -101,7 +101,7 @@ export function ChatSection() {
   }, [hasStarted]);
 
   return (
-    <section ref={sectionRef} className="py-26 md:py-38">
+    <section ref={sectionRef} className="py-26 md:py-38 bg-[#121212]">
       <div className="max-w-[593px] mx-auto px-6">
         <div className="flex flex-col gap-10 md:gap-12">
           {/* First grey messages group */}
@@ -115,14 +115,14 @@ export function ChatSection() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
                   >
-                    <span className="font-['Instrument_Sans',sans-serif] text-[#828282] text-[12px] leading-[16px]">
+                    <span className="font-['Instrument_Sans',sans-serif] text-[#ACACAC] text-[12px] leading-[16px]">
                       Masha Dawidenko
                     </span>
-                    <div className="bg-[#efefef] rounded-tl-2xl rounded-tr-2xl rounded-br-2xl rounded-bl-[2px] px-4 py-3 mt-2 max-w-[385px]">
+                    <div className="bg-[#222222] rounded-tl-2xl rounded-tr-2xl rounded-br-2xl rounded-bl-[2px] px-4 py-3 mt-2 max-w-[385px]">
                       {typingMessage === 1 ? (
                         <TypingIndicator />
                       ) : (
-                        <p className="font-['Instrument_Sans',sans-serif] text-black text-[16px] leading-[24px]">
+                        <p className="font-['Instrument_Sans',sans-serif] text-white text-[16px] leading-[24px]">
                           {messages[0].text}
                         </p>
                       )}
@@ -143,11 +143,11 @@ export function ChatSection() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <Avatar />
-                <div className="bg-[#efefef] rounded-tl-2xl rounded-tr-2xl rounded-br-2xl rounded-bl-[2px] px-4 py-3 max-w-[385px]">
+                <div className="bg-[#222222] rounded-tl-2xl rounded-tr-2xl rounded-br-2xl rounded-bl-[2px] px-4 py-3 max-w-[385px]">
                   {typingMessage === 2 ? (
                     <TypingIndicator />
                   ) : (
-                    <p className="font-['Instrument_Sans',sans-serif] text-black text-[16px] leading-[24px]">
+                    <p className="font-['Instrument_Sans',sans-serif] text-white text-[16px] leading-[24px]">
                       {messages[1].text}
                     </p>
                   )}
@@ -165,7 +165,7 @@ export function ChatSection() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ duration: 0.3, ease: "easeOut" }}
               >
-                <span className="font-['Instrument_Sans',sans-serif] text-[#828282] text-[12px] leading-[16px]">
+                <span className="font-['Instrument_Sans',sans-serif] text-[#ACACAC] text-[12px] leading-[16px]">
                   You
                 </span>
                 <div className="bg-[#8ecf25] rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl rounded-br-[2px] px-4 py-3">
@@ -188,14 +188,14 @@ export function ChatSection() {
               >
                 <Avatar />
                 <div className="flex flex-col gap-2">
-                  <span className="font-['Instrument_Sans',sans-serif] text-[#828282] text-[12px] leading-[16px]">
+                  <span className="font-['Instrument_Sans',sans-serif] text-[#ACACAC] text-[12px] leading-[16px]">
                     Masha Dawidenko
                   </span>
-                  <div className="bg-[#efefef] rounded-tl-2xl rounded-tr-2xl rounded-br-2xl rounded-bl-[2px] px-4 py-3 max-w-[385px]">
+                  <div className="bg-[#222222] rounded-tl-2xl rounded-tr-2xl rounded-br-2xl rounded-bl-[2px] px-4 py-3 max-w-[385px]">
                     {typingMessage === 4 ? (
                       <TypingIndicator />
                     ) : (
-                      <p className="font-['Instrument_Sans',sans-serif] text-black text-[16px] leading-[24px]">
+                      <p className="font-['Instrument_Sans',sans-serif] text-white text-[16px] leading-[24px]">
                         {messages[3].text}
                       </p>
                     )}

@@ -144,14 +144,16 @@ export function ProjectsSection() {
               tags={["Mobile Design", "Contract"]}
               description="The internal Android application is designed to automate the work of JTI employees involved in servicing retail outlets and warehouses, including coordinators, retail and technical merchandisers, and team leaders."
             />
-            <Link to="/case-study" className="block">
-              <ProjectCard
-                image={imgRectangle2}
-                title="Flowguard Enterprise Access Management Platform"
-                tags={["Web Design", "Pet Project"]}
-                description="An internal admin platform designed to manage users, roles, teams, and access policies in a scalable B2B SaaS environment, ensuring secure access control and operational governance."
-              />
-            </Link>
+            <Link to="/case-study" className="block group transition-all duration-300 hover:scale-[1.04] cursor-pointer">
+  <ProjectCard
+    image={imgRectangle2}
+    title="Flowguard Enterprise Access Management Platform"
+    tags={["Web Design", "Pet Project"]}
+    description="An internal admin platform designed to manage users, roles, teams, and access policies in a scalable B2B SaaS environment, ensuring secure access control and operational governance."
+  />
+</Link>
+
+            
             <ProjectCard
               image={imgRectangle3}
               title="INVOICEE Ios App"
@@ -160,6 +162,7 @@ export function ProjectsSection() {
               imageClass="object-[20%_center]"
             />
           </div>
+          
 
         </div>
 

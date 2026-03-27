@@ -173,7 +173,7 @@ export function ProjectsSection() {
               Other works
             </h3>
           </AnimatedSection>
-          <div className="grid grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 lg:!grid-cols-4 gap-4 md:gap-6">
             {[imgRectangle7, imgRectangle5, imgRectangle4, imgRectangle6].map((img, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div className="h-[180px] md:h-[240px] lg:h-[287px] relative overflow-hidden rounded-lg cursor-pointer group">

@@ -19,6 +19,7 @@ interface ScreenData {
     description?: string;
     image: string;
     video?: boolean;
+    videoSrc?: string; // ← Добавляем поле для ссылки на видео
   }[];
 }
 
@@ -27,7 +28,7 @@ const screens: ScreenData[] = [
     number: "01",
     title: "Users & Teams",
     subtitle: "управление пользователями",
-    image: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwZGFzaGJvYXJkJTIwdXNlcnMlMjBtYW5hZ2VtZW50JTIwZGFyayUyMFVJfGVufDF8fHx8MTc3MzI1NjIxN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+    image: "https://images.unsplash.com/photo-1559028006-448665bd7c7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwZGFzaGJvYXJkJTIwdXNlcnMlMjBtYW5hZ2VtZW50JTIwZGFyayUyMFVJfGVufDF8fHx8MTc3MzI1NjIxN3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral  ",
     task: "Дать администратору быстрый обзор текущего состояния пользователей в системе.",
     features: [
       "Таблица пользователей с ключевыми параметрами: имя, email, роль, команда, статус, последний вход",
@@ -43,12 +44,14 @@ const screens: ScreenData[] = [
         description: "контролируемое добавление новых пользователей со статусом Invited",
         image: inviteUserImg,
         video: true,
+        videoSrc: "https://www.dropbox.com/scl/fi/xfpfmew5t7faeize7jg39/Video-Project-2.mp4?rlkey=uoz2nkyxbh5gm4779wdaso4mc&st=99cr3zgx&dl=1", // ← Вставь ссылку на 2-е видео
       },
       {
         heading: "Right sidebar Manage Team",
         description: "структура команды, тимлид, быстрые действия, без ухода с основной страницы",
         image: manageTeamImg,
         video: true,
+        videoSrc: "https://www.dropbox.com/scl/fi/37sayd0ebw6dgsm7cbl9p/Comp-1_6.mp4?rlkey=2y64t4o51hsm1xmnwkp3brp0l&st=yn4ynfap&dl=1", // ← Вставь ссылку на 3-е видео
       },
     ],
     effect:
@@ -91,7 +94,7 @@ function ScreenCard({ screen, index }: { screen: ScreenData; index: number }) {
           <div className="flex flex-col gap-1.5">
             <div className="flex items-baseline gap-3">
               <span
-                className="font-['Inter',sans-serif] text-[12px] text-[#FF8228] tracking-[0.06em]"
+                className="font-['Inter',sans-serif] text-[12px] text-[#A4A4A4] tracking-[0.06em]"
                 style={{ fontWeight: 500 }}
               >
                 {screen.number}
@@ -147,8 +150,8 @@ function ScreenCard({ screen, index }: { screen: ScreenData; index: number }) {
           </div>
 
           {/* Effect */}
-          <div className="flex items-start gap-3 bg-white rounded-xl px-5 py-4 border border-[#f0f0f0]">
-            <span className="shrink-0 w-[5px] h-[5px] rounded-full bg-[#FF8228] mt-[7px]" />
+          <div className="flex items-start gap-3 bg-tranparent rounded-xl px-0 py-4 ">
+            
             <p className="font-['Inter',sans-serif] text-[14px] text-[#6b6b6b] leading-[1.65]">
               <span className="text-[#999]" style={{ fontWeight: 500 }}>Эффект:</span>{" "}
               {screen.effect}
@@ -170,7 +173,7 @@ function ScreenCard({ screen, index }: { screen: ScreenData; index: number }) {
                   <div className="h-px bg-[#f0f0f0]" />
                   <div className="flex flex-col gap-2">
                     <span
-                      className="font-['Inter',sans-serif] text-[11px] text-[#FF8228] uppercase tracking-[0.08em]"
+                      className="font-['Inter',sans-serif] text-[11px] text-[#A4A4A4] uppercase tracking-[0.08em]"
                       style={{ fontWeight: 500 }}
                     >
                       {String(i + 1).padStart(2, "0")}
@@ -201,48 +204,27 @@ function ScreenCard({ screen, index }: { screen: ScreenData; index: number }) {
                     />
                   </motion.div>
 
-                  {/* Video placeholder */}
-                  {section.video && (
+                  {/* 🔽 ВИДЕО вместо заглушки 🔽 */}
+                  {section.video && section.videoSrc && (
                     <motion.div
-                      className="relative rounded-xl overflow-hidden border border-[#eaeaea] bg-[#1a1a1a] aspect-video flex items-center justify-center cursor-pointer group"
+                      className="relative rounded-xl overflow-hidden border border-[#eaeaea] bg-[#1a1a1a] aspect-video"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-30px" }}
                       transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.12 + 0.25 }}
                     >
-                      {/* Subtle grid pattern */}
-                      <div
-                        className="absolute inset-0 opacity-[0.04]"
-                        style={{
-                          backgroundImage:
-                            "linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)",
-                          backgroundSize: "40px 40px",
-                        }}
-                      />
-
-                      {/* Play button */}
-                      <div className="relative flex flex-col items-center gap-4">
-                        <div className="w-16 h-16 rounded-full bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-sm transition-transform group-hover:scale-110">
-                          <svg
-                            width="22"
-                            height="26"
-                            viewBox="0 0 22 26"
-                            fill="none"
-                            className="ml-1"
-                          >
-                            <path
-                              d="M21 12.134a1 1 0 010 1.732l-19.5 11.258a1 1 0 01-1.5-.866V1.742a1 1 0 011.5-.866L21 12.134z"
-                              fill="white"
-                              fillOpacity="0.9"
-                            />
-                          </svg>
-                        </div>
-                        <span className="font-['Inter',sans-serif] text-[12px] text-white/40 uppercase tracking-[0.1em]">
-                          Video coming soon
-                        </span>
-                      </div>
+                      <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                      >
+                        <source src={section.videoSrc} type="video/mp4" />
+                      </video>
                     </motion.div>
                   )}
+                  {/* 🔼 КОНЕЦ ВИДЕО 🔼 */}
                 </motion.div>
               ))}
             </div>

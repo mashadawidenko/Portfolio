@@ -5,3 +5,19 @@
 html {
   scroll-behavior: smooth;
 }
+
+* {
+  cursor: none !important;
+}
+
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+}
+
+html, body, #root {
+  isolation: auto !important;
+  transform: none !important;
+  filter: none !important;
+}

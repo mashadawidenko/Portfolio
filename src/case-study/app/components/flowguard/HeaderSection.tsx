@@ -2,8 +2,8 @@ import svgPaths from "../../../imports/svg-236tgfz0o3";
 
 export function HeaderSection() {
   return (
-    <header className="w-full border-b border-[#e8e8e8]">
-      <div className="flex items-center justify-between px-6 md:px-10 lg:px-[160px] py-6 md:py-8">
+    <header className="w-full border-b border-[#e8e8e8] lg:px-[160px]">
+      <div className="flex items-center justify-between px-6 md:px-10 lg:px-[160px] py-6 md:py-8 ">
         <div className="flex items-center gap-2.5">
           <div className="w-5 h-5 shrink-0">
             <svg className="block w-full h-full" fill="none" viewBox="0 0 20 20">

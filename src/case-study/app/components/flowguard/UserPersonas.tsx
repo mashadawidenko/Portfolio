@@ -39,7 +39,7 @@ function PersonaCard({ number, role, capabilities, contexts }: PersonaCardProps)
               <p className="text-[12px] text-[#3d3d3d] leading-[1.6]">{ctx.context}</p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[12px] text-[#999]" style={{ fontWeight: 500 }}>⚡ Риски сейчас</p>
+              <p className="text-[12px] text-[#999]" style={{ fontWeight: 500 }}>Риски сейчас</p>
               <p className="text-[12px] text-[#3d3d3d] leading-[1.6]">{ctx.risk}</p>
             </div>
           </div>
@@ -133,7 +133,7 @@ export function UserPersonas() {
   return (
     <AnimatedSection className="w-full">
       <div className="bg-[#fafafa] w-full overflow-hidden py-10 md:py-16 flex items-center justify-center">
-        <div className="bg-white border border-[#eaeaea] rounded-2xl overflow-hidden w-[90%] max-w-[1191px] p-6 md:p-10 lg:p-14">
+        <div className="bg-white rounded-2xl overflow-hidden w-[100%] max-w-[1191px] p-6 md:p-10 lg:p-14">
           <p
             className="font-['Inter',sans-serif] text-[12px] text-[#999] uppercase tracking-[0.08em] mb-6"
             style={{ fontWeight: 500 }}

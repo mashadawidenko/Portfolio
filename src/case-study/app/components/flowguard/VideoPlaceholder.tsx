@@ -42,6 +42,7 @@ export function VideoPlaceholder() {
             loop
             muted
             playsInline
+            webkit-playsinline
             className="absolute inset-0 w-full h-full object-cover"
           >
             <source 

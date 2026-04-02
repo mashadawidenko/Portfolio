@@ -8,27 +8,27 @@ export function ProblemsSection() {
           className="font-['DM_Sans',sans-serif] text-[20px] text-[#0f0f0f]"
           style={{ fontWeight: 500 }}
         >
-          Проблемы
+          Problems
         </h2>
         <div className="flex flex-col gap-5 font-['Inter',sans-serif] text-[#3d3d3d] text-[15px] leading-[1.7]">
           <div className="flex flex-col gap-3">
             <p>
-              Сотрудники B2B-компаний сталкиваются с трудностями при управлении:
+              Employees in B2B companies face challenges when managing:
             </p>
             <ul className="flex flex-col gap-1 ml-5 list-disc text-[#555] marker:text-[#ccc]">
-              <li>пользователями,</li>
-              <li>ролями,</li>
-              <li>доступами,</li>
-              <li>интеграциями и подписками.</li>
+              <li>users,</li>
+              <li>roles,</li>
+              <li>access,</li>
+              <li>integrations and subscriptions.</li>
             </ul>
           </div>
           <div className="flex flex-col gap-3">
-            <p>Из-за этого:</p>
+            <p>As a result:</p>
             <ul className="flex flex-col gap-1 ml-5 list-disc text-[#555] marker:text-[#ccc]">
-              <li>процессы согласования внутри компании занимают несколько дней;</li>
-              <li>теряется эффективность сотрудников;</li>
-              <li>снижается прозрачность действий;</li>
-              <li>возрастает риск ошибок и проблем с безопасностью.</li>
+              <li>internal approval processes can take several days;</li>
+              <li>employee efficiency decreases;</li>
+              <li>action transparency is reduced;</li>
+              <li>the risk of errors and security issues increases.</li>
             </ul>
           </div>
         </div>

@@ -8,18 +8,17 @@ export function ProjectDescription() {
           className="font-['DM_Sans',sans-serif] text-[20px] text-[#0f0f0f]"
           style={{ fontWeight: 500 }}
         >
-          Описание проекта
+          Project Description
         </h2>
         <div className="flex flex-col gap-4 font-['Inter',sans-serif] text-[#3d3d3d] text-[15px] leading-[1.7]">
           <p>
-            Flowguard — PET-проект, концепт B2B-админ-панели для управления
-            пользователями, ролями, доступами, интеграциями и подписками внутри
-            компании.
+            Flowguard is a pet project — a concept of a B2B admin panel for managing
+            users, roles, access, integrations, and subscriptions within a company.
           </p>
           <p>
-            В этом кейсе я осознанно не показываю всю систему. Фокус — на
-            поднаборе сценариев, которые я проработала от проблемы до интерфейса
-            и реализовала в виде трёх ключевых экранов.
+            In this case study, I intentionally do not present the entire system. The focus
+            is on a subset of scenarios that I explored from problem to interface and
+            implemented as three key screens.
           </p>
         </div>
       </div>

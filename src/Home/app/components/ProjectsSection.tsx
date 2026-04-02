@@ -14,13 +14,14 @@ interface ProjectCardProps {
   title: string;
   tags: string[];
   description: string;
+  stickyDescription: string; // ← Описание для левого заголовка
   imageClass?: string;
 }
 
-function ProjectCard({ image, title, tags, description, imageClass = "" }: ProjectCardProps) {
+function ProjectCard({ image, title, tags, description, stickyDescription, imageClass = "" }: ProjectCardProps) {
   return (
-    <AnimatedSection className="flex flex-col gap-8 flex-1 min-w-[280px]">
-      <div className="h-[220px] md:h-[262px] lg:h-[470px] xl:h-[530px] relative overflow-hidden rounded-lg">
+    <AnimatedSection className="flex flex-col gap-8 flex-1 min-w-[280px]" data-project-title={stickyDescription}>
+      <div className="h-[250px] md:h-[300px] lg:h-[470px] xl:h-[530px] relative overflow-hidden rounded-lg">
         <img
           alt={title}
           className={`absolute inset-0 max-w-none object-cover size-full ${imageClass}`}
@@ -54,7 +55,15 @@ export function ProjectsSection() {
   const projectsContainerRef = useRef<HTMLDivElement>(null);
   const [isFixed, setIsFixed] = useState(false);
   const [fixedStyles, setFixedStyles] = useState({ left: 0, width: 0, height: 0 });
+  const [activeDescription, setActiveDescription] = useState("My Projects"); // ← Динамический текст
   const triggerScrollRef = useRef<number>(0);
+
+  // 🔑 Описания для левого заголовка (меняются при скролле)
+  const projectDescriptions = [
+    "iMerch App — автоматизация работы мерчандайзеров в розничных точках и на складах.",
+    "Flowguard — платформа управления доступом для B2B SaaS с контролем ролей и политик.",
+    "Invoicee — мобильное приложение для создания счетов и управления финансами.",
+  ];
 
   // 🔑 Проверка: десктоп или нет (1024px = lg breakpoint)
   const isDesktop = () => window.innerWidth >= 1024;
@@ -77,7 +86,6 @@ export function ProjectsSection() {
 
       const currentScroll = window.scrollY;
       const projectsRect = projectsContainerRef.current.getBoundingClientRect();
-      const offsetTop = 80;
 
       const scrolledPastTrigger = currentScroll >= triggerScrollRef.current;
       const notAtEndOfProjects = projectsRect.bottom > 150;
@@ -94,10 +102,28 @@ export function ProjectsSection() {
       } else if (!shouldStick && isFixed) {
         setIsFixed(false);
       }
+
+      // 🔽 ОПРЕДЕЛЯЕМ АКТИВНЫЙ ПРОЕКТ ПО СКРОЛЛУ
+      const projectCards = document.querySelectorAll('[data-project-title]');
+      let foundActive = false;
+      
+      projectCards.forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        // Карточка активна, если её верхняя часть в пределах 30% высоты экрана
+        if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= window.innerHeight * 0.3) {
+          setActiveDescription(projectDescriptions[index] || "My Projects");
+          foundActive = true;
+        }
+      });
+      
+      // Если ни одна карточка не активна — показываем заголовок по умолчанию
+      if (!foundActive && scrolledPastTrigger) {
+        setActiveDescription("My Projects");
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll); // Пересчитываем при изменении размера
+    window.addEventListener("resize", handleScroll);
     handleScroll();
 
     return () => {
@@ -117,7 +143,7 @@ export function ProjectsSection() {
             {/* Placeholder только на десктопе */}
             {isFixed && <div style={{ height: fixedStyles.height }} className="hidden lg:block" />}
             
-            {/* Заголовок */}
+            {/* Заголовок с динамическим описанием */}
             <div 
               ref={titleRef}
               style={isFixed ? {
@@ -129,8 +155,8 @@ export function ProjectsSection() {
               } : {}}
             >
               <AnimatedSection>
-                <h2 className="font-['Instrument_Sans',sans-serif] font-medium text-black text-[28px] md:text-[32px] leading-[40px] capitalize">
-                  My Projects
+                <h2 className="font-['Instrument_Sans',sans-serif] font-medium text-black text-[28px] md:text-[32px] leading-[40px] capitalize transition-all duration-300">
+                  {activeDescription}
                 </h2>
               </AnimatedSection>
             </div>
@@ -143,27 +169,26 @@ export function ProjectsSection() {
               title="iMerch App for JTI (Japan Tobacco International)"
               tags={["Mobile Design", "Contract"]}
               description="The internal Android application is designed to automate the work of JTI employees involved in servicing retail outlets and warehouses, including coordinators, retail and technical merchandisers, and team leaders."
+              stickyDescription={projectDescriptions[0]} // ← Передаём описание для левого заголовка
             />
             <Link to="/case-study" className="block group transition-all duration-300 hover:scale-[1.04] cursor-pointer">
-  <ProjectCard
-    image={imgRectangle2}
-    title="Flowguard Enterprise Access Management Platform"
-    tags={["Web Design", "Pet Project"]}
-    description="An internal admin platform designed to manage users, roles, teams, and access policies in a scalable B2B SaaS environment, ensuring secure access control and operational governance."
-  />
-</Link>
-
-            
+              <ProjectCard
+                image={imgRectangle2}
+                title="Flowguard Enterprise Access Management Platform"
+                tags={["Web Design", "Pet Project"]}
+                description="An internal admin platform designed to manage users, roles, teams, and access policies in a scalable B2B SaaS environment, ensuring secure access control and operational governance."
+                stickyDescription={projectDescriptions[1]}
+              />
+            </Link>
             <ProjectCard
               image={imgRectangle3}
               title="INVOICEE Ios App"
               tags={["Mobile Design", "Freelance"]}
               description="A convenient mobile app for creating invoices, tracking payments, and managing finances."
               imageClass="object-[20%_center]"
+              stickyDescription={projectDescriptions[2]}
             />
           </div>
-          
-
         </div>
 
         {/* Other works */}

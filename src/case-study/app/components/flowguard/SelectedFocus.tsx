@@ -8,16 +8,15 @@ export function SelectedFocus() {
           className="font-['DM_Sans',sans-serif] text-[20px] text-[#0f0f0f]"
           style={{ fontWeight: 500 }}
         >
-          Выбранный фокус
+          Selected Focus
         </h2>
         <div className="flex flex-col gap-4 font-['Inter',sans-serif] text-[15px] text-[#3d3d3d] leading-[1.7]">
           <p>
-            Чтобы не распыляться на всю систему, я сфокусировалась на
-            сценариях, которые напрямую влияют на безопасность, контроль,
-            операционную эффективность.
+            To avoid spreading across the entire system, I focused on scenarios
+            that directly impact security, control, and operational efficiency.
           </p>
           <p>
-            И реализовала три экрана, закрывающие этот фокус:
+            I designed three screens to address this focus:
           </p>
         </div>
       </div>

@@ -8,19 +8,19 @@ export function Conclusion() {
           className="font-['DM_Sans',sans-serif] text-[20px] text-[#0f0f0f]"
           style={{ fontWeight: 500 }}
         >
-          Вывод
+          Conclusion
         </h2>
         <div className="flex flex-col gap-4 font-['Inter',sans-serif] text-[15px] text-[#3d3d3d] leading-[1.7]">
           <p>
-            Прототип показал, что в B2B-админках ценность UX измеряется не
-            количеством функций, а тем, насколько интерфейсы позволяют
-            предсказывать последствия действий, контролировать доступ и снижать
-            операционные риски.
+            The prototype showed that in B2B admin panels, UX value is not defined
+            by the number of features, but by how well the interface allows users
+            to predict the outcomes of their actions, control access, and reduce
+            operational risks.
           </p>
           <p>
-            Основной инсайт: администратору нужна система готовых сценариев
-            действий, где критичные процессы защищены, а масштабирование команды
-            и добавление интеграций проходят без ошибок.
+            The key insight: administrators need a system of predefined workflows
+            where critical processes are protected, and team scaling and integration
+            management happen without errors.
           </p>
         </div>
       </div>

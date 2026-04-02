@@ -124,17 +124,25 @@ const handleSubmit = (e: React.FormEvent) => {
         I'm Maria,
       </p>
     </div>
-    <p className="font-['Instrument_Sans',sans-serif] text-[#AAAAAA] text-[36px] md:text-[50px] lg:text-[60px] leading-[1.15] tracking-[-2px]">
-      a{" "}
+    
+    {/* 🔽 ЗАГОЛОВОК С ГРАДИЕНТОМ 🔽 */}
+    <p className="font-['Instrument_Sans',sans-serif] text-[36px] md:text-[50px] lg:text-[60px] leading-[1.15] tracking-[-2px]">
+      <span className="bg-gradient-to-r from-[#9E9E9E] to-[#BCBCBC] bg-clip-text text-transparent">
+        a
+      </span>{" "}
       <span className="text-[#171717]">UI/UX Designer</span>{" "}
-      working on{" "}
+      <span className="bg-gradient-to-r from-[#9E9E9E] to-[#BCBCBC] bg-clip-text text-transparent">
+        working on
+      </span>{" "}
       <span className="text-[#171717]">web</span>{" "}
-      and{" "}
+      <span className="bg-gradient-to-r from-[#9E9E9E] to-[#BCBCBC] bg-clip-text text-transparent">
+        and
+      </span>{" "}
       <span className="text-[#171717]">mobile products</span>.
     </p>
+    {/* 🔼 КОНЕЦ ГРАДИЕНТА 🔼 */}
   </div>
 </AnimatedSection>
-
           <AnimatedSection delay={0.2}>
             <div className="flex gap-4 items-start">
               <div className="relative shrink-0 size-8 mt-1 animate-spin-slow">

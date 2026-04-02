@@ -3,18 +3,18 @@ import { AnimatedSection } from "./AnimatedSection";
 const hypotheses = [
   {
     condition:
-      "Управление пользователями, ролями и командами вынести в понятный и централизованный интерфейс",
-    outcome: "Снизится количество ошибок при работе с доступами",
+      "Move user, role, and team management into a clear and centralized interface",
+    outcome: "The number of errors in access management will decrease",
   },
   {
-    condition: "Сделать статусы и права пользователей видимыми сразу",
-    outcome: "Повысится прозрачность действий",
+    condition: "Make user statuses and permissions immediately visible",
+    outcome: "Action transparency will improve",
   },
   {
     condition:
-      "Дать возможность выполнять ключевые действия без сложных согласований",
+      "Enable key actions without complex approval processes",
     outcome:
-      "Сократится время на операционные задачи администраторов",
+      "Time spent on administrative tasks will be reduced",
   },
 ];
 
@@ -26,7 +26,7 @@ export function UXHypothesis() {
           className="font-['DM_Sans',sans-serif] text-[20px] text-[#0f0f0f] mb-8"
           style={{ fontWeight: 500 }}
         >
-          UX-гипотеза
+          UX Hypothesis
         </h2>
 
         <div className="w-full overflow-x-auto">
@@ -34,10 +34,10 @@ export function UXHypothesis() {
             {/* Table header */}
             <div className="grid grid-cols-2 border-b border-[#e5e5e5] pb-3 mb-1">
               <div className="font-['Inter',sans-serif] text-[12px] text-[#999] uppercase tracking-[0.06em]" style={{ fontWeight: 500 }}>
-                Если
+                If
               </div>
               <div className="font-['Inter',sans-serif] text-[12px] text-[#999] uppercase tracking-[0.06em] pl-6" style={{ fontWeight: 500 }}>
-                То
+                Then
               </div>
             </div>
 

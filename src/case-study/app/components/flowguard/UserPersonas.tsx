@@ -35,11 +35,11 @@ function PersonaCard({ number, role, capabilities, contexts }: PersonaCardProps)
         {contexts.map((ctx, i) => (
           <div key={i} className="bg-[#f8f8f8] rounded-xl p-4 flex flex-col gap-3">
             <div className="flex flex-col gap-1">
-              <p className="text-[12px] text-[#999]" style={{ fontWeight: 500 }}>Контекст</p>
+              <p className="text-[12px] text-[#999]" style={{ fontWeight: 500 }}>Context</p>
               <p className="text-[12px] text-[#3d3d3d] leading-[1.6]">{ctx.context}</p>
             </div>
             <div className="flex flex-col gap-1">
-              <p className="text-[12px] text-[#999]" style={{ fontWeight: 500 }}>Риски сейчас</p>
+              <p className="text-[12px] text-[#999]" style={{ fontWeight: 500 }}>Current Risks</p>
               <p className="text-[12px] text-[#3d3d3d] leading-[1.6]">{ctx.risk}</p>
             </div>
           </div>
@@ -54,19 +54,19 @@ const personas: PersonaCardProps[] = [
     number: 1,
     role: "Super Admin",
     capabilities: [
-      "Полный доступ",
-      "Настройка всего аккаунта компании",
-      "Управление биллингом, интеграциями, ролями",
-      "Ответственность за безопасность",
+      "Full access",
+      "Configure the entire company account",
+      "Manage billing, integrations, and roles",
+      "Responsible for security",
     ],
     contexts: [
       {
-        context: "Когда я настраиваю компанию в системе, я хочу безопасно управлять всеми ролями и разрешениями, чтобы сотрудники имели доступ только к нужным функциям не создавая рисков в безопасности.",
-        risk: "Ошибки при распределении прав",
+        context: "When I configure a company in the system, I want to securely manage all roles and permissions so that employees only have access to the features they need without creating security risks.",
+        risk: "Errors in permission assignment",
       },
       {
-        context: "Когда появляются новые интеграции или подписки, я хочу управлять биллингом и подключениями в одном месте, чтобы снизить вероятность финансовых и технических ошибок",
-        risk: "Ручное согласование через несколько платформ → ошибки",
+        context: "When new integrations or subscriptions appear, I want to manage billing and connections in one place to reduce the risk of financial and technical errors",
+        risk: "Manual approvals across multiple platforms → errors",
       },
     ],
   },
@@ -74,19 +74,19 @@ const personas: PersonaCardProps[] = [
     number: 2,
     role: "Admin (IT / Security)",
     capabilities: [
-      "Управление пользователями и ролями",
-      "Создание политик доступа",
-      "Работа с инцидентами и логами",
-      "Нет доступа к биллингу",
+      "Manage users and roles",
+      "Create access policies",
+      "Handle incidents and logs",
+      "No access to billing",
     ],
     contexts: [
       {
-        context: "Когда новые пользователи подключаются к системе, я хочу создавать политики доступа и роли, чтобы гарантировать безопасную работу",
-        risk: "Риски некорректных доступов",
+        context: "When new users are added to the system, I want to create access policies and roles to ensure secure operations",
+        risk: "Risk of incorrect access permissions",
       },
       {
-        context: "Когда возникает инцидент или подозрительная активность, я хочу быстро просматривать логи дабы предотвратить или устранить последствия",
-        risk: "Просмотр данных занимает длительное время",
+        context: "When an incident or suspicious activity occurs, I want to quickly review logs to prevent or mitigate the impact",
+        risk: "Reviewing data takes too long",
       },
     ],
   },
@@ -94,18 +94,18 @@ const personas: PersonaCardProps[] = [
     number: 3,
     role: "Manager",
     capabilities: [
-      "Управляет своей командой",
-      "Одобряет / отклоняет запросы",
-      "Видит отчёты по своей зоне",
+      "Manages their team",
+      "Approves / rejects requests",
+      "Views reports within their scope",
     ],
     contexts: [
       {
-        context: "Когда моя команда отправляет запросы, я хочу быстро одобрять или отклонять их, чтобы поддерживать эффективность процессов",
-        risk: "Задержки из-за ручной обработки",
+        context: "When my team submits requests, I want to quickly approve or reject them to maintain process efficiency",
+        risk: "Delays due to manual processing",
       },
       {
-        context: "Когда я оцениваю работу своей зоны, я хочу видеть актуальные отчеты, чтобы принимать решения на актуальных данных",
-        risk: "Данные разбросаны, нужна ручная сверка",
+        context: "When evaluating performance in my area, I want to see up-to-date reports to make decisions based on current data",
+        risk: "Data is scattered, requires manual reconciliation",
       },
     ],
   },
@@ -113,17 +113,17 @@ const personas: PersonaCardProps[] = [
     number: 4,
     role: "Support / Auditor (Read-only)",
     capabilities: [
-      "Доступ только к просмотру",
-      "Логи, отчёты, история изменений",
+      "Read-only access",
+      "Logs, reports, and change history",
     ],
     contexts: [
       {
-        context: "Когда я проверяю логи и отчеты, я хочу видеть все изменения, чтобы убедиться в корректности работы без вмешательства в процесс",
-        risk: "Трудно отслеживать изменения в реальном времени",
+        context: "When reviewing logs and reports, I want to see all changes to ensure accuracy without interfering with the process",
+        risk: "Difficult to track changes in real time",
       },
       {
-        context: "Когда я анализирую изменения, я хочу доступ к полным данным без риска случайного изменения, чтобы соблюдать безопасность",
-        risk: "Необходимость двойной проверки → потеря времени",
+        context: "When analyzing changes, I want access to complete data without the risk of accidental edits to maintain security",
+        risk: "Need for double-checking → time loss",
       },
     ],
   },
@@ -138,7 +138,7 @@ export function UserPersonas() {
             className="font-['Inter',sans-serif] text-[12px] text-[#999] uppercase tracking-[0.08em] mb-6"
             style={{ fontWeight: 500 }}
           >
-            Целевые пользователи + JTBD
+            Target Users + JTBD
           </p>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
             {personas.map((persona) => (

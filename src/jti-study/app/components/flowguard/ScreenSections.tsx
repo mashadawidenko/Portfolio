@@ -2,6 +2,13 @@ import { AnimatedSection } from "./AnimatedSection";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { SectionImage } from "./SectionImage";
+import imgSection4 from "../../../assets/xasbhksabhx8asx8asxjsaxjs.png";
+import imgSection5 from "../../../assets/dsjsjc9s9s900xsjjxs.png";
+import imgSection6 from "../../../assets/axbkkabj9ax99asx0asa7x6.png";
+import imgSection7 from "../../../assets/alnxasxnasxuw82838e3ui2whdw.png";
+import imgSection8 from "../../../assets/asnjxaa823e23eic.png";
+
 
 interface StepData {
   number: number;
@@ -95,7 +102,7 @@ const steps: StepData[] = [
         <p>
           Based on business requirements, user stories, and discussions with the product team, I analyzed all planned scenarios and product modules.
         </p>
-        <ImagePlaceholder label="Product Module Diagram" />
+        <SectionImage alt="Section 4" aspectRatio="1192/700" src={imgSection4}/>
         <p>
           The analysis revealed that executing a service visit is:
         </p>
@@ -127,7 +134,7 @@ const steps: StepData[] = [
         <p>
           These flows became the basis for interface design, ensuring logical and simple scenarios.
         </p>
-        <ImagePlaceholder label="Process Flow Mobile" />
+        <SectionImage alt="Section 5" aspectRatio="1192/700" src={imgSection5}/>
       </div>
     ),
   },
@@ -173,8 +180,8 @@ const steps: StepData[] = [
           Special attention was paid to ensuring all modules work in a unified
           system and do not break the main visit scenario.
         </p>
-        <ImagePlaceholder label="Module UX — Screens" />
-        <ImagePlaceholder label="Module UX — Details" />
+        <SectionImage alt="Section 6" aspectRatio="1192/700" src={imgSection6}/>
+        <SectionImage alt="Section 7" aspectRatio="1192/700" src={imgSection7}/>
       </div>
     ),
   },
@@ -195,7 +202,7 @@ const steps: StepData[] = [
         <p>
           Prototypes were used for demonstrating solutions to the business, discussions with analysts and developers, and clarifying logic before handoff to development.
         </p>
-        <ImagePlaceholder label="UI Prototypes" />
+        <SectionImage alt="Section 8" aspectRatio="1192/700" src={imgSection8}/>
       </div>
     ),
   },

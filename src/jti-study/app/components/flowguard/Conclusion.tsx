@@ -1,4 +1,6 @@
 import { AnimatedSection } from "./AnimatedSection";
+import { SectionImage } from "./SectionImage";
+import imgSection9 from "../../../assets/abjxsas88283e32dhekjdsc.png";
 
 export function Conclusion() {
   return (
@@ -22,6 +24,7 @@ export function Conclusion() {
           <p>
             Even without full analytics and test metrics, I transformed fragmented and confusing processes into a logical, repeatable user flow that became the foundation of the MVP and can be scaled for further product development.
           </p>
+          <SectionImage alt="Section 9" aspectRatio="1192/700" src={imgSection9} />
         </div>
       </div>
     </AnimatedSection>

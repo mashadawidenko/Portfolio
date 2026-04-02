@@ -12,6 +12,10 @@ import { RisksSection } from "./RisksSection";
 import { AnimatedSection } from "./AnimatedSection";
 import { ScreenSections } from "./ScreenSections";
 import { Conclusion } from "./Conclusion";
+import imgSection1 from "../../../assets/wfhuh43r39932iojsedfjweif.png";
+import imgSection2 from "../../../assets/dckasbcdqw28329hdfwshekf.png";
+import imgSection3 from "../../../assets/sackhs88sa8asxj.png";
+import imgSection4 from "../../../assets/xasbhksabhx8asx8asxjsaxjs.png";
 
 export function FlowguardCaseStudy() {
   return (
@@ -40,7 +44,11 @@ export function FlowguardCaseStudy() {
 
         {/* Section 1 Image */}
         <div className="mt-12 md:mt-16">
-          <SectionImage alt="Section 1" aspectRatio="1192/700" />
+          <SectionImage 
+          alt="Section 1" 
+          aspectRatio="1192/700" 
+          src={imgSection1}
+          />
         </div>
 
         {/* Моя роль */}
@@ -55,8 +63,8 @@ export function FlowguardCaseStudy() {
 
         {/* Section 2 + 3 Images */}
         <div className="mt-12 md:mt-16 flex flex-col gap-4">
-          <SectionImage alt="Section 2" aspectRatio="1192/700" />
-          <SectionImage alt="Section 3" aspectRatio="1192/700" />
+          <SectionImage alt="Section 2" aspectRatio="1192/700" src={imgSection2} />
+          
         </div>
 
         {/* Цель MVP */}
@@ -76,7 +84,8 @@ export function FlowguardCaseStudy() {
 
         {/* Section 4 Image */}
         <div className="mt-12 md:mt-16">
-          <SectionImage alt="Section 4" aspectRatio="1192/700" />
+          <SectionImage alt="Section 3" aspectRatio="1192/700" src={imgSection3}/>
+          
         </div>
 
         {/* Этапы работы */}

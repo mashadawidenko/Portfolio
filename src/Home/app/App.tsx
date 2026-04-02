@@ -6,7 +6,7 @@ import { DateBar } from "./components/DateBar";
 import { ProjectsSection } from "./components/ProjectsSection";
 import { WorkExperience } from "./components/WorkExperience";
 import { Footer } from "./components/Footer";
-import { Cursor } from "./components/Cursor";
+
 
 export default function App() {
   return (

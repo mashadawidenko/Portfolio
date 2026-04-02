@@ -164,6 +164,7 @@ export function ProjectsSection() {
 
           {/* ПРАВАЯ КОЛОНКА - СПИСОК ПРОЕКТОВ */}
           <div ref={projectsContainerRef} className="max-w-[800px] flex-1 flex flex-col gap-24 ml-auto">
+            <Link to="/jti-study" className="block group transition-all duration-300 hover:scale-[1.04] cursor-pointer">
             <ProjectCard
               image={imgRectangle1}
               title="iMerch App for JTI (Japan Tobacco International)"
@@ -171,6 +172,7 @@ export function ProjectsSection() {
               description="The internal Android application is designed to automate the work of JTI employees involved in servicing retail outlets and warehouses, including coordinators, retail and technical merchandisers, and team leaders."
               stickyDescription={projectDescriptions[0]} // ← Передаём описание для левого заголовка
             />
+            </Link>
             <Link to="/case-study" className="block group transition-all duration-300 hover:scale-[1.04] cursor-pointer">
               <ProjectCard
                 image={imgRectangle2}

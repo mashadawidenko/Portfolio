@@ -94,7 +94,7 @@ function ScreenCard({ screen, index }: { screen: ScreenData; index: number }) {
           <div className="flex flex-col gap-1.5">
             <div className="flex items-baseline gap-3">
               <span
-                className="font-['Inter',sans-serif] text-[12px] text-[#A4A4A4] tracking-[0.06em]"
+                className="font-['Inter',sans-serif] text-[14px] text-[#A4A4A4] tracking-[0.06em]"
                 style={{ fontWeight: 500 }}
               >
                 {screen.number}

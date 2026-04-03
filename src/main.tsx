@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Analytics } from "@vercel/analytics/react"
 import './Home/styles/index.css'
 import './case-study/styles/index.css'  
 import './jti-study/styles/index.css' 
@@ -31,5 +32,6 @@ createRoot(document.getElementById('root')!).render(
       <Route path="/case-study" element={<CaseStudy />} />
       <Route path="/jti-study" element={<JTIStudy />} />
     </Routes>
+     <Analytics />
   </BrowserRouter>
 )

@@ -1,6 +1,4 @@
-import svgPaths from "../../imports/svg-7wmd1n95bc";
-import { useState, useEffect } from "react";
-import { X } from "lucide-react";
+import svgPaths from "../../../imports/svg-236tgfz0o3";
 
 export function HeaderSection() {
   const [menuOpen, setMenuOpen] = useState(false);

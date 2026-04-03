@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 function FigmaIcon() {
   return (
     <div className="h-[25px] w-[30px] relative shrink-0 overflow-clip">
-      <svg className="absolute block size-full" fill="none" viewBox="0 0 16.6667 20.8333">
+      <svg className="absolute block size-full grayscale" fill="none" viewBox="0 0 16.6667 20.8333">
         <path d={svgPaths.p3289b480} fill="#0ACF83" />
         <path d={svgPaths.p11788500} fill="#A259FF" />
         <path d={svgPaths.p13d38a00} fill="#F24E1E" />
@@ -18,11 +18,11 @@ function FigmaIcon() {
 function MiroIcon() {
   return (
     <div className="relative shrink-0 size-5 overflow-clip">
-      <svg className="absolute block size-full" fill="none" viewBox="0 0 20 20">
+      <svg className="absolute block size-full grayscale" fill="none" viewBox="0 0 20 20">
         <path d={svgPaths.p642bfc0} fill="#FFD02F" />
       </svg>
       <div className="absolute inset-[12.49%_10.39%_12.49%_14.59%]">
-        <svg className="absolute block size-full" fill="none" viewBox="0 0 15.0045 15.0044">
+        <svg className="absolute block size-full grayscale" fill="none" viewBox="0 0 15.0045 15.0044">
           <path d={svgPaths.p1056c500} fill="#050038" />
         </svg>
       </div>
@@ -48,7 +48,7 @@ const skills = [
 function AeIcon() {
   return (
     <div className="h-[14.257px] relative shrink-0 w-[23.5px]">
-      <svg className="absolute block size-full" fill="none" viewBox="0 0 23.4996 14.2572">
+      <svg className="absolute block size-full grayscale" fill="none" viewBox="0 0 23.4996 14.2572">
         <path d={svgPaths.p162db200} fill="#6A6AEA" />
         <path d={svgPaths.p20e2af00} fill="#6A6AEA" />
       </svg>
@@ -59,7 +59,7 @@ function AeIcon() {
 function AiIcon() {
   return (
     <div className="h-[15.136px] relative shrink-0 w-[17.726px]">
-      <svg className="absolute block size-full" fill="none" viewBox="0 0 17.726 15.1358">
+      <svg className="absolute block size-full grayscale" fill="none" viewBox="0 0 17.726 15.1358">
         <path d={svgPaths.p14fb6d80} fill="#FF9A00" />
         <path d={svgPaths.p32f01700} fill="#FF9A00" />
       </svg>
@@ -70,7 +70,7 @@ function AiIcon() {
 function PsIcon() {
   return (
     <div className="h-[14.394px] relative shrink-0 w-[19.228px]">
-      <svg className="absolute block size-full" fill="none" viewBox="0 0 19.2284 14.3943">
+      <svg className="absolute block size-full grayscale" fill="none" viewBox="0 0 19.2284 14.3943">
         <path d={svgPaths.pf17ab80} fill="#2191E3" />
         <path d={svgPaths.p2a9cbd00} fill="#2191E3" />
       </svg>
@@ -81,7 +81,7 @@ function PsIcon() {
 function TeamsIcon() {
   return (
     <div className="relative shrink-0 size-[25px]">
-      <svg className="absolute block size-full" fill="none" viewBox="0 0 25 25">
+      <svg className="absolute block size-full grayscale" fill="none" viewBox="0 0 25 25">
         <g clipPath="url(#clip_teams)">
           <path d={svgPaths.pdf37800} fill="#7B83EB" />
           <path d={svgPaths.p27b36900} fill="#5059C9" />

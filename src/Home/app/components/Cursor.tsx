@@ -7,9 +7,10 @@ export function Cursor() {
   const cursorY = useMotionValue(-100);
   const scaleRaw = useMotionValue(1);
 
-  const cursorXSpring = useSpring(cursorX, { damping: 35, stiffness: 800, mass: 0.3 });
-  const cursorYSpring = useSpring(cursorY, { damping: 35, stiffness: 800, mass: 0.3 });
-  const scaleSpring = useSpring(scaleRaw, { damping: 25, stiffness: 400, mass: 0.3 });
+  // 🔽 Более мягкие настройки (меньше нагрузка на CPU)
+  const cursorXSpring = useSpring(cursorX, { damping: 25, stiffness: 500, mass: 0.5 });
+  const cursorYSpring = useSpring(cursorY, { damping: 25, stiffness: 500, mass: 0.5 });
+  const scaleSpring = useSpring(scaleRaw, { damping: 20, stiffness: 300, mass: 0.5 });
 
   useEffect(() => {
     setMounted(true);
@@ -45,7 +46,7 @@ export function Cursor() {
 
   return (
     <>
-      {/* Большой круг — скрыт на мобильном (hidden md:block) */}
+      {/* Большой круг */}
       <motion.div
         className="fixed rounded-full pointer-events-none hidden md:block"
         style={{
@@ -59,7 +60,7 @@ export function Cursor() {
           mixBlendMode: "difference",
         }}
       />
-      {/* Маленькая точка — скрыта на мобильном (hidden md:block) */}
+      {/* Маленькая точка */}
       <motion.div
         className="fixed rounded-full pointer-events-none hidden md:block"
         style={{

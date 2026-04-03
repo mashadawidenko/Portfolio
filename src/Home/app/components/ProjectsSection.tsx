@@ -23,31 +23,45 @@ interface ProjectCardProps {
 function ProjectCard({ image, title, tags, description, stickyDescription, imageClass = "", isLinked = false }: ProjectCardProps) {
   return (
     <AnimatedSection 
-      className={`flex flex-col gap-8 flex-1 min-w-[280px] ${isLinked ? 'cursor-pointer group' : ''}`} 
+      className={`flex flex-col flex-1 min-w-[280px] md:border md:border-[#DFDFDF] rounded-[10px] overflow-hidden ${isLinked ? 'cursor-pointer group' : ''}`} 
       data-project-title={stickyDescription}
     >
-      <div className={`h-[250px] md:h-[300px] lg:h-[470px] xl:h-[530px] relative overflow-hidden rounded-lg ${isLinked ? 'group-hover:ring-2 group-hover:ring-blue-500 transition-all duration-300' : ''}`}>
+      {/* КАРТИНКА */}
+      <div className={`h-[250px] md:h-[300px] lg:h-[470px] xl:h-[530px] relative overflow-hidden ${isLinked ? 'group-hover:ring-2 group-hover:ring-blue-500 transition-all duration-300' : ''}`}>
         <img
           alt={title}
           className={`absolute inset-0 max-w-none object-cover size-full ${imageClass}`}
           src={image}
+          loading="lazy"  
+          decoding="async"
         />
       </div>
-      <div className="flex flex-col gap-4">
-        <h3 className={`font-['Instrument_Sans',sans-serif] font-medium text-[#161616] text-[20px] md:text-[24px] leading-[32px] tracking-[-1px] ${isLinked ? 'group-hover:text-blue-600 transition-colors duration-300' : ''}`}>
-          {title}
-        </h3>
-        <div className="flex flex-wrap gap-2.5">
-          {tags.map((tag) => (
+      
+      {/* 🔽 ЧЁРНАЯ ПОЛОСА С ТЕГАМИ (без обводки на мобилке) */}
+      <div className="bg-black md:border-y md:border-white/10 px-4 py-1">
+        <div className="flex flex-wrap items-center gap-1">
+          {tags.map((tag, index) => (
+            <>
             <span
               key={tag}
-              className="px-5 py-1.5 rounded-full border border-[#323232]/32 font-['Instrument_Sans',sans-serif] text-[#161616] text-[14px] leading-[28px] whitespace-nowrap"
+              className="px-3 py-1 rounded-full backdrop-blur-sm  font-['Inter',sans-serif] text-white text-[11px] md:text-[12px] font-medium whitespace-nowrap"
             >
               {tag}
             </span>
+            {index < tags.length - 1 && (
+          <div className="w-[6px] h-[6px] rounded-full bg-white/50 shrink-0" />
+        )}
+        </>
           ))}
         </div>
-        <p className="font-['Instrument_Sans',sans-serif] text-[#414141] text-[14px] md:!text-[18px] leading-[30px]">
+      </div>
+      
+      {/* ОПИСАНИЕ С ОТСТУПАМИ */}
+      <div className="flex flex-col gap-3 px-5 py-5">
+        <h3 className={`font-['Instrument_Sans',sans-serif] font-medium text-[#161616] text-[20px] md:!text-[24px] leading-[28px] tracking-[-1px] ${isLinked ? 'group-hover:text-blue-600 transition-colors duration-300' : ''}`}>
+          {title}
+        </h3>
+        <p className="font-['Inter',sans-serif] font-regular text-[#575757] text-[14px] leading-[22px]">
           {description}
         </p>
       </div>
@@ -204,7 +218,7 @@ export function ProjectsSection() {
               } : {}}
             >
               <AnimatedSection>
-                <h2 className={`font-['Instrument_Sans',sans-serif] font-medium text-[28px] md:text-[32px] leading-[40px] capitalize transition-all duration-300 ${
+                <h2 className={`font-['Instrument_Sans',sans-serif] font-medium text-[28px] md:!text-[36px] leading-[40px] capitalize transition-all duration-300 ${
                   hoveredProjectIndex !== null && activeDescription !== "My Projects" 
                     ? 'text-blue-600' 
                     : 'text-black'
@@ -223,7 +237,7 @@ export function ProjectsSection() {
               onMouseEnter={() => setHoveredProjectIndex(0)}
               onMouseLeave={() => setHoveredProjectIndex(null)}
             >
-              <Link to="/jti-study" className="block group transition-all duration-300 hover:scale-[1.04]">
+              <Link to="/jti-study" className="block group transition-all duration-300 hover:scale-[1.02]">
                 <ProjectCard
                   image={imgRectangle1}
                   title="iMerch App for JTI (Japan Tobacco International)"
@@ -240,7 +254,7 @@ export function ProjectsSection() {
               onMouseEnter={() => setHoveredProjectIndex(1)}
               onMouseLeave={() => setHoveredProjectIndex(null)}
             >
-              <Link to="/case-study" className="block group transition-all duration-300 hover:scale-[1.04]">
+              <Link to="/case-study" className="block group transition-all duration-300 hover:scale-[1.02]">
                 <ProjectCard
                   image={imgRectangle2}
                   title="Flowguard Enterprise Access Management Platform"
@@ -316,7 +330,7 @@ export function ProjectsSection() {
             {otherWorks.map((img, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
                 <div 
-                  className="min-w-[280px] md:min-w-[350px] lg:min-w-[287px] aspect-square lg:h-[287px] relative overflow-hidden rounded-lg cursor-pointer group shrink-0"
+                  className="min-w-[280px] md:!min-w-[460px] lg:min-w-[287px] aspect-square lg:!h-[380px] relative overflow-hidden rounded-lg cursor-pointer group shrink-0"
                   onClick={() => openOverlay(i)}
                 >
                   <img

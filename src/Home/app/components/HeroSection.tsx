@@ -117,7 +117,7 @@ export function HeroSection() {
                   <path d={svgPaths.p15906a00} fill="#F15DF4" />
                 </svg>
               </div>
-              <p className="font-['Inter',sans-serif] text-[#757575] text-[16px] md:!text-[21px] lg:text-[20px] leading-[29px] max-w-[750px]">
+              <p className="font-['Inter',sans-serif] text-[#757575] text-[16px] md:!text-[17px] lg:text-[20px] leading-[25px] max-w-[750px]">
                 I design intuitive user flows and craft clean interfaces for web and mobile products. I work with complex logic, create prototypes and design systems, define user journeys, and focus on improving usability.
               </p>
             </div>
@@ -134,7 +134,7 @@ export function HeroSection() {
               </button>
               <button 
                 onClick={handleCopyEmail}
-                className="px-5 py-2.5 border border-[#121212] font-['Instrument_Sans',sans-serif] text-[14px] md:text-[16px] rounded-lg hover:bg-[#f5f5f5] transition-all duration-200 flex items-center gap-2 min-w-[160px]"
+                className="px-5 py-2.5 border border-[#c0c0c0] font-['Instrument_Sans',sans-serif] text-[14px] md:text-[16px] rounded-lg hover:bg-[#f5f5f5] transition-all duration-200 flex items-center gap-2 min-w-[160px]"
               >
                 {copied ? (
                   <>
@@ -170,7 +170,7 @@ export function HeroSection() {
               </button>
               <button 
                 onClick={handleCopyEmail}
-                className="px-6 py-2.5 border border-[#121212] text-[#121212] font-['Instrument_Sans',sans-serif] text-[16px] rounded-lg hover:bg-[#f5f5f5] transition-all duration-200 flex items-center justify-center gap-2"
+                className="px-6 py-2.5 border border-[#c0c0c0] text-[#121212] font-['Instrument_Sans',sans-serif] text-[16px] rounded-lg hover:bg-[#f5f5f5] transition-all duration-200 flex items-center justify-center gap-2"
               >
                 {copied ? (
                   <>

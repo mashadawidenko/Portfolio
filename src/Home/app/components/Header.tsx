@@ -20,7 +20,7 @@ export function Header() {
           
           {/* ЛОГОТИП */}
           <div className="flex gap-2.5 items-center">
-            <span className="font-['Instrument_Sans',sans-serif] font-medium text-[#3d3d3d] text-[16px] leading-[28px] whitespace-nowrap">
+            <span className="font-['Instrument_Sans',sans-serif] font-bold text-[#3d3d3d] text-[16px] leading-[28px] whitespace-nowrap">
               Masha Dawidenko
             </span>
           </div>
@@ -28,7 +28,7 @@ export function Header() {
           {/* ДЕСКТОП МЕНЮ — показываем только если isDesktop = true */}
           {isDesktop && (
             <div className="flex gap-6 md:gap-11 items-center">
-              <a href="#" className="text-[#3d3d3d] text-[16px] underline decoration-solid font-['Instrument_Sans',sans-serif]">
+              <a href="#" className="text-[#3d3d3d] text-[16px] underline decoration-solid  font-['Instrument_Sans',sans-serif]">
                 Linkedin
               </a>
               <a href="#" className="text-[#3d3d3d] text-[16px] underline decoration-solid font-['Instrument_Sans',sans-serif]">

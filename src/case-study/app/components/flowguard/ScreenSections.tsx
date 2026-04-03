@@ -2,6 +2,7 @@ import { AnimatedSection } from "./AnimatedSection";
 import { ImageWithFallback } from "../figma/ImageWithFallback";
 import { motion } from "motion/react";
 
+
 import bulkActionsImg from "../../../assets/dbfde302128a01e12a507a1aab4d2df15f2107d7.png";
 import inviteUserImg from "../../../assets/595e5efbd160a63011fec12bb5f07bef1a15c57b.png";
 import manageTeamImg from "../../../assets/ede3dee0da84c03539d0dbefc12c575bbfdf5ab9.png";

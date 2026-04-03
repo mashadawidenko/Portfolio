@@ -1,6 +1,8 @@
 import svgPaths from "../../../imports/svg-236tgfz0o3";
+import { useState, useEffect } from "react";
+import { X } from "lucide-react";
 
-export function HeaderSection() {
+export function HeaderJTI() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 

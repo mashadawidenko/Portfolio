@@ -1,5 +1,5 @@
 import { Breadcrumbs } from "./Breadcrumbs";
-import { HeaderSection } from "./HeaderSection";
+import { HeaderJTI } from "./HeaderJTI";
 import { HeroSection } from "./HeroSection";
 import { ProjectDescription } from "./ProjectDescription";
 import { DashboardImage } from "./DashboardImage";
@@ -20,7 +20,7 @@ import imgSection4 from "../../../assets/xasbhksabhx8asx8asxjsaxjs.png";
 export function FlowguardCaseStudy() {
   return (
     <div className="bg-white min-h-screen w-full">
-      <HeaderSection />
+      <HeaderJTI />
 
       <div className="w-full max-w-[1344px] mx-auto flex flex-col">
         {/* Breadcrumbs */}

@@ -8,11 +8,22 @@ import Home from './Home/app/App'
 import CaseStudy from './case-study/app/App'
 import JTIStudy from './jti-study/app/App'
 import { ScrollToTop } from './Home/app/components/ScrollToTop'
+import Lenis from 'lenis'
 
+// Инициализация Lenis
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+})
+
+function raf(time: number) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)
 
 createRoot(document.getElementById('root')!).render(
   <BrowserRouter>
-  {/* 🔽 КУРСОР ПЕРВЫМ — на корневом уровне */}
     <Cursor />
     <ScrollToTop />
     <Routes>

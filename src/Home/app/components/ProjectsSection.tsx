@@ -154,11 +154,11 @@ export function ProjectsSection() {
   }, [overlayOpen]);
 
   return (
-    <section className="py-16 md:!py-0">
+    <section className="py-0 md:!py-0">
       
 
       {/* 🔽 СПИСОК ПРОЕКТОВ - КАЖДЫЙ ОТ КРАЯ ДО КРАЯ */}
-      <div ref={projectsContainerRef} className="flex flex-col bg-[#EBEBEB] md:!py-6 gap-4 md:gap-4">
+      <div ref={projectsContainerRef} className="flex flex-col bg-[#EBEBEB] py-6 md:!py-6 gap-4 md:gap-4">
         
         {/* Проект 1 — iMerch App */}
         <AnimatedSection>

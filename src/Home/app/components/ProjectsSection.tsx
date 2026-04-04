@@ -251,7 +251,7 @@ export function ProjectsSection() {
           {/* 🔽 КАРУСЕЛЬ */}
           <div 
             ref={carouselRef}
-            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-6"
+            className="flex gap-6 overflow-x-auto scrollbar-hide scroll-smooth pb-6 " 
             style={{ 
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
@@ -284,7 +284,7 @@ export function ProjectsSection() {
       {/* 🔽 ОВЕРЛЕЙ С КАРТИНКАМИ — ВНЕ КОНТЕЙНЕРА */}
       {overlayOpen && (
         <div 
-          className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm flex items-center justify-center"
+          className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm flex items-center justify-center" data-theme="dark"
           onClick={closeOverlay}
         >
           {/* Кнопка закрытия */}

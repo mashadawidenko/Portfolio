@@ -3,21 +3,46 @@ import { motion, useMotionValue, useSpring } from "motion/react";
 
 export function Cursor() {
   const [mounted, setMounted] = useState(false);
+  const [isDark, setIsDark] = useState(false);
+  
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   const scaleRaw = useMotionValue(1);
 
-  // 🔽 Более мягкие настройки (меньше нагрузка на CPU)
   const cursorXSpring = useSpring(cursorX, { damping: 25, stiffness: 500, mass: 0.5 });
   const cursorYSpring = useSpring(cursorY, { damping: 25, stiffness: 500, mass: 0.5 });
   const scaleSpring = useSpring(scaleRaw, { damping: 20, stiffness: 300, mass: 0.5 });
+
+  const cursorColor = isDark ? "#FFFFFF" : "#000000";
+  const blendMode = isDark ? "normal" : "difference";
+  
+  // 🔽 РАЗМЕРЫ КУРСОРА: меньше на тёмном фоне
+  const bigCursorSize = isDark ? 20 : 32;  // Было 32, стало 20 на тёмном
+  const smallCursorSize = isDark ? 6 : 10;  // Было 10, стало 6 на тёмном
+  const offset = isDark ? 10 : 16;  // Смещение маленькой точки
 
   useEffect(() => {
     setMounted(true);
 
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - 16);
-      cursorY.set(e.clientY - 16);
+      cursorX.set(e.clientX - offset);
+      cursorY.set(e.clientY - offset);
+
+      // 🔽 ПРОВЕРЯЕМ ФОН ПОД КУРСОРОМ
+      const element = document.elementFromPoint(e.clientX, e.clientY);
+      
+      let current: Element | null = element;
+      let foundDark = false;
+      
+      while (current && current !== document.body) {
+        if (current.getAttribute('data-theme') === 'dark') {
+          foundDark = true;
+          break;
+        }
+        current = current.parentElement;
+      }
+      
+      setIsDark(foundDark);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
@@ -52,12 +77,13 @@ export function Cursor() {
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
-          width: 32,
-          height: 32,
-          backgroundColor: "#000000",
+          width: bigCursorSize,
+          height: bigCursorSize,
+          backgroundColor: cursorColor,
           zIndex: 999998,
           scale: scaleSpring,
-          mixBlendMode: "difference",
+          mixBlendMode: blendMode,
+          transition: "background-color 0.15s ease, mix-blend-mode 0.15s ease, width 0.15s ease, height 0.15s ease",
         }}
       />
       {/* Маленькая точка */}
@@ -66,13 +92,14 @@ export function Cursor() {
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
-          width: 10,
-          height: 10,
-          backgroundColor: "#000000",
+          width: smallCursorSize,
+          height: smallCursorSize,
+          backgroundColor: cursorColor,
           zIndex: 999999,
           scale: scaleSpring,
-          marginLeft: 18,
-          marginTop: 18,
+          marginLeft: offset + 4,
+          marginTop: offset + 4,
+          transition: "background-color 0.15s ease, width 0.15s ease, height 0.15s ease",
         }}
       />
     </>

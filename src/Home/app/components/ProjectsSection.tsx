@@ -26,9 +26,13 @@ function ProjectCard({ image, title, subtitle, tags, description, stickyDescript
     <div 
       className={`w-full ${isLinked ? 'cursor-pointer group' : ''}`} 
       data-project-title={stickyDescription}
+      
     >
       {/* 🔽 ТЁМНАЯ КАРТОЧКА - ОТ КРАЯ ДО КРАЯ (20px отступы по бокам) */}
-      <div className="bg-[#1a1a1a] rounded-[16px] p-5 md:p-8 lg:p-10 overflow-hidden mx-5 md:mx-[20px]">
+      <div 
+  className="bg-[#1a1a1a] rounded-[16px] p-5 md:p-8 lg:p-10 overflow-hidden mx-5 md:mx-[20px]"
+  data-theme="dark"
+>
         
         {/* 🔽 КОНТЕНТ МАКС 1280PX ПО ЦЕНТРУ */}
         <div className="max-w-[1800px] mx-auto">

@@ -30,8 +30,8 @@ function ProjectCard({ image, title, subtitle, tags, description, stickyDescript
     >
       {/* 🔽 ТЁМНАЯ КАРТОЧКА - ОТ КРАЯ ДО КРАЯ (20px отступы по бокам) */}
       <div 
-  className="bg-[#1a1a1a] rounded-[16px] p-5 md:p-8 lg:p-10 overflow-hidden mx-5 md:mx-[20px]"
-  data-theme="dark"
+  className="bg-[#F7F7F7] rounded-[16px] p-5 md:p-8 lg:p-10 overflow-hidden mx-5 md:mx-[20px]"
+  
 >
         
         {/* 🔽 КОНТЕНТ МАКС 1280PX ПО ЦЕНТРУ */}
@@ -68,20 +68,20 @@ function ProjectCard({ image, title, subtitle, tags, description, stickyDescript
               {/* Заголовок + описание — СВЕРХУ, на уровне верха картинки */}
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-2">
-                  <h3 className={`font-['Instrument_Sans',sans-serif] font-medium text-white text-[24px] md:!text-[32px] leading-[1.1] tracking-[-1px] ${isLinked ? 'group-hover:text-blue-400 transition-colors duration-300' : ''}`}>
+                  <h3 className={`font-['Instrument_Sans',sans-serif] font-medium text-black text-[24px] md:!text-[32px] leading-[1.1] tracking-[-1px] ${isLinked ? 'group-hover:text-blue-400 transition-colors duration-300' : ''}`}>
                     {title}
                   </h3>
                 </div>
 
                 {/* Описание */}
-                <p className="font-['Inter',sans-serif] text-[#a0a0a0] text-[14px] md:!text-[14px] leading-[1.6]">
+                <p className="font-['Inter',sans-serif] text-[#424242] text-[14px] md:!text-[14px] leading-[1.6]">
                   {description}
                 </p>
               </div>
 
               {/* Кнопка Learn more — ВНИЗУ */}
               {isLinked && (
-                <button className="w-full md:w-auto px-6 py-2.5 bg-white text-[#1a1a1a] rounded-[10px] font-['Inter',sans-serif] text-[15px] font-medium hover:bg-[#f0f0f0] transition-colors duration-300 flex items-center justify-center gap-2 mt-6">
+                <button className="w-full md:w-auto px-6 py-2.5 bg-black text-[#ffffff] rounded-[10px] font-['Inter',sans-serif] text-[15px] font-medium hover:bg-[#f0f0f0] transition-colors duration-300 flex items-center justify-center gap-2 mt-6">
                   <span>Learn more</span>
                   <ArrowRight size={18} />
                 </button>
@@ -158,7 +158,7 @@ export function ProjectsSection() {
       
 
       {/* 🔽 СПИСОК ПРОЕКТОВ - КАЖДЫЙ ОТ КРАЯ ДО КРАЯ */}
-      <div ref={projectsContainerRef} className="flex flex-col bg-[#000000] md:!py-6 gap-4 md:gap-4">
+      <div ref={projectsContainerRef} className="flex flex-col bg-[#EBEBEB] md:!py-6 gap-4 md:gap-4">
         
         {/* Проект 1 — iMerch App */}
         <AnimatedSection>

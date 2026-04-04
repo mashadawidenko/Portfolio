@@ -15,18 +15,13 @@ export function Cursor() {
 
   const cursorColor = isDark ? "#FFFFFF" : "#000000";
   const blendMode = isDark ? "normal" : "difference";
-  
-  // 🔽 РАЗМЕРЫ КУРСОРА: меньше на тёмном фоне
-  const bigCursorSize = isDark ? 20 : 32;  // Было 32, стало 20 на тёмном
-  const smallCursorSize = isDark ? 6 : 10;  // Было 10, стало 6 на тёмном
-  const offset = isDark ? 10 : 16;  // Смещение маленькой точки
 
   useEffect(() => {
     setMounted(true);
 
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - offset);
-      cursorY.set(e.clientY - offset);
+      cursorX.set(e.clientX - 16);
+      cursorY.set(e.clientY - 16);
 
       // 🔽 ПРОВЕРЯЕМ ФОН ПОД КУРСОРОМ
       const element = document.elementFromPoint(e.clientX, e.clientY);
@@ -71,14 +66,14 @@ export function Cursor() {
 
   return (
     <>
-      {/* Большой круг */}
+      {/* 🔽 БОЛЬШОЙ КРУГ — всегда показываем */}
       <motion.div
         className="fixed rounded-full pointer-events-none hidden md:block"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
-          width: bigCursorSize,
-          height: bigCursorSize,
+          width: isDark ? 20 : 32,  // Меньше на тёмном
+          height: isDark ? 20 : 32,
           backgroundColor: cursorColor,
           zIndex: 999998,
           scale: scaleSpring,
@@ -86,22 +81,25 @@ export function Cursor() {
           transition: "background-color 0.15s ease, mix-blend-mode 0.15s ease, width 0.15s ease, height 0.15s ease",
         }}
       />
-      {/* Маленькая точка */}
-      <motion.div
-        className="fixed rounded-full pointer-events-none hidden md:block"
-        style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
-          width: smallCursorSize,
-          height: smallCursorSize,
-          backgroundColor: cursorColor,
-          zIndex: 999999,
-          scale: scaleSpring,
-          marginLeft: offset + 4,
-          marginTop: offset + 4,
-          transition: "background-color 0.15s ease, width 0.15s ease, height 0.15s ease",
-        }}
-      />
+      
+      {/* 🔽 МАЛЕНЬКАЯ ТОЧКА — ТОЛЬКО НА СВЕТЛОМ ФОНЕ */}
+      {!isDark && (
+        <motion.div
+          className="fixed rounded-full pointer-events-none hidden md:block"
+          style={{
+            x: cursorXSpring,
+            y: cursorYSpring,
+            width: 10,
+            height: 10,
+            backgroundColor: cursorColor,
+            zIndex: 999999,
+            scale: scaleSpring,
+            marginLeft: 18,
+            marginTop: 18,
+            transition: "background-color 0.15s ease",
+          }}
+        />
+      )}
     </>
   );
 }

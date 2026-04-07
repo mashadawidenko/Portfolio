@@ -15,30 +15,29 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    id: 1,
-    dateRange: "Sep 2025 — Dec 2025",
+    id: 2,
+    dateRange: "Jan 2026 — Apr 2026",
     location: "Russia, Moscow",
-    title: "Invoice iOS, (freelance for international market)",
+    title: "Klikta - mobile AI application (Contract)",
     role: "Role: UI UX Designer",
     projectInfo: [
-      { label: "Project", value: "Fintech app for invoicing and service management (USA, Canada, Australia)" },
-      { label: "Target audience", value: "Freelancers, small business, and self-employed" },
-      { label: "Tools", value: "Figma, Miro" },
+      { label: "Project", value: "Project under NDA" },
+      
     ],
     details: [
-      "Designed 60+ iOS app screens with comprehensive logic and UX for all key functions: creating and editing invoices, estimates, adding services, invoice templates, client database, services catalog, account settings, PDF export;",
-      "Handled the entire project independently, including UX, UI, prototyping, design system, and UX copy;",
-      "Conducted competitive analysis and SWOT, including studying features of foreign apps, identifying insights, forming JTBD; defined product strategy: target semi-automation segment for busy freelancers and small businesses, ensure smooth onboarding without pressure;",
-      "Optimized user flow for invoice creation: implemented templates to reduce steps, speed up the process, and lower cognitive load for users;",
-      "Developed all UX copy independently, including formulations for complex and repetitive scenarios, coordinated directly with the developer;",
-      "Closely collaborated with client-developer: discussed and documented solutions, ensuring correct implementation of all UX/UI patterns;",
-      "Created unified style and layouts ensuring interface consistency, ease of working with client database and services catalog;",
-      "Participated in all project stages: from competitor analysis and feature planning to handing off prototypes for MVP development.",
+      "Developed UX/UI for key mobile application scenarios;",
+      "Simplified the shooting user scenario by implementing visual UX solutions;",
+      "Worked out interaction logic, interface states, and user scenarios (including errors and edge cases);",
+      "Designed and created the Paywall;",
+      "Developed a user feedback collection scenario within the application;",
+      "Created a responsive landing page (Framer);",
+      "Prepared graphics and screenshots for the App Store;",
+      "Collaborated with business and development teams, participated in product decision-making.",
     ],
   },
   {
     id: 2,
-    dateRange: "Feb 2025 — Sep 2025",
+    dateRange: "Mar 2025 — Oct 2025",
     location: "Russia, Moscow",
     title: "JTI - Japan Tobacco International (Contract)",
     role: "Role: UI UX Designer",
@@ -62,6 +61,29 @@ const experiences: ExperienceItem[] = [
       "Ensured full UX compatibility with business requirements and internal company processes, minimizing clarifying questions from analysts and PMs.",
     ],
   },
+  {
+    id: 1,
+    dateRange: "Sep 2025 — Dec 2025",
+    location: "Russia, Moscow",
+    title: "Invoice iOS, (freelance for international market)",
+    role: "Role: UI UX Designer",
+    projectInfo: [
+      { label: "Project", value: "Fintech app for invoicing and service management (USA, Canada, Australia)" },
+      { label: "Target audience", value: "Freelancers, small business, and self-employed" },
+      { label: "Tools", value: "Figma, Miro" },
+    ],
+    details: [
+      "Designed 60+ iOS app screens with comprehensive logic and UX for all key functions: creating and editing invoices, estimates, adding services, invoice templates, client database, services catalog, account settings, PDF export;",
+      "Handled the entire project independently, including UX, UI, prototyping, design system, and UX copy;",
+      "Conducted competitive analysis and SWOT, including studying features of foreign apps, identifying insights, forming JTBD; defined product strategy: target semi-automation segment for busy freelancers and small businesses, ensure smooth onboarding without pressure;",
+      "Optimized user flow for invoice creation: implemented templates to reduce steps, speed up the process, and lower cognitive load for users;",
+      "Developed all UX copy independently, including formulations for complex and repetitive scenarios, coordinated directly with the developer;",
+      "Closely collaborated with client-developer: discussed and documented solutions, ensuring correct implementation of all UX/UI patterns;",
+      "Created unified style and layouts ensuring interface consistency, ease of working with client database and services catalog;",
+      "Participated in all project stages: from competitor analysis and feature planning to handing off prototypes for MVP development.",
+    ],
+  },
+  
 ];
 
 function AccordionItem({ item }: { item: ExperienceItem }) {

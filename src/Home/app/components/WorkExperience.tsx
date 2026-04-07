@@ -15,7 +15,7 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    id: 2,
+    id: 1,
     dateRange: "Jan 2026 — Apr 2026",
     location: "Russia, Moscow",
     title: "Klikta - mobile AI application (Contract)",
@@ -62,7 +62,7 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
-    id: 1,
+    id: 3,
     dateRange: "Sep 2025 — Dec 2025",
     location: "Russia, Moscow",
     title: "Invoice iOS, (freelance for international market)",
@@ -81,6 +81,25 @@ const experiences: ExperienceItem[] = [
       "Closely collaborated with client-developer: discussed and documented solutions, ensuring correct implementation of all UX/UI patterns;",
       "Created unified style and layouts ensuring interface consistency, ease of working with client database and services catalog;",
       "Participated in all project stages: from competitor analysis and feature planning to handing off prototypes for MVP development.",
+    ],
+  },
+  {
+    id: 4,
+    dateRange: "Sep 2023 — present",
+    location: "Russia, Moscow",
+    title: "Freelance",
+    role: "Role: UI UX Designer",
+    projectInfo: [
+      { label: "Project", value: "Designed interfaces for mobile and web products" },
+      
+    ],
+    details: [
+      "Worked on UX and UI: thought through user scenarios, screen logic, and visual design;",
+      "Created screens in Figma, built prototypes, and prepared layouts for development;",
+      "Participated in task analysis: clarified requirements, asked questions, and helped form convenient user flows;",
+      "Developed and used components and simple design systems to maintain a unified style;",
+      "Wrote and edited texts for interfaces (buttons, tooltips, states);",
+      "Collaborated with developers and clients: discussed solutions and made revisions based on feedback;",
     ],
   },
   

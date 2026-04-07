@@ -42,9 +42,9 @@ const experiences: ExperienceItem[] = [
     title: "JTI - Japan Tobacco International (Contract)",
     role: "Role: UI UX Designer",
     projectInfo: [
-      { label: "Project", value: "Fintech app for invoicing and service management (USA, Canada, Australia)" },
-      { label: "Target audience", value: "Freelancers, small business, and self-employed" },
-      { label: "Tools", value: "Figma, Miro" },
+      { label: "Project", value: " Internal Android application for retail/merch employees (coordinators, merchandisers, retail, foremen)" },
+      { label: "Users", value: "~2000 employees" },
+      { label: "Tools", value: "Figma, Miro, Jira, Microsoft Teams" },
     ],
     details: [
       "Designed and created 300+ application screens with complex user scenarios; was responsible for all key modules independently, including: tech/retail merch, adding equipment with 6 cases, work schedule with vacations, fuel data, inventory, audit, merchandising, photo verification, visit lists, personal account, settings, warehouse;",

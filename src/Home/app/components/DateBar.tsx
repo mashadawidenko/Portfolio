@@ -113,8 +113,8 @@ export function DateBar() {
   });
 
   return (
-    <div className="border-b border-[#dadada] py-6 px-6 md:px-10 lg:px-[160px]">
-      <div className="max-w-[1600px] mx-auto flex items-center justify-between">
+    <div className="border-b border-[#dadada] py-6 px-6 md:px-10 lg:px-[20px]">
+      <div className="max-w-[auro mx-auto flex items-center justify-between">
         {/* Дата */}
         <span className="font-['Inter',sans-serif] font-medium text-[#161616] text-[14px] md:text-[16px] leading-[28px]">
           {dateStr}

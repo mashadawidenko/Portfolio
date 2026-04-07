@@ -16,11 +16,11 @@ export function Header() {
   return (
     <>
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-sm border-b border-[#dadada]">
-        <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-[160px] py-4 md:py-6.5 flex items-center justify-between">
+        <div className="max-w-[1600px] mx-auto px-6 md:px-12 lg:px-[160px] py-4 md:py-6 flex items-center justify-between">
           
           {/* ЛОГОТИП */}
           <div className="flex gap-2.5 items-center">
-            <span className="font-['Instrument_Sans',sans-serif] font-bold text-[#3d3d3d] text-[16px] leading-[28px] whitespace-nowrap">
+            <span className="font-['Instrument_Sans',sans-serif] font-medium text-[#3d3d3d] text-[16px] leading-[28px] whitespace-nowrap">
               Masha Dawidenko
             </span>
           </div>
@@ -28,10 +28,10 @@ export function Header() {
           {/* ДЕСКТОП МЕНЮ — показываем только если isDesktop = true */}
           {isDesktop && (
             <div className="flex gap-6 md:gap-11 items-center">
-              <a href="#" className="text-[#3d3d3d] text-[16px] underline decoration-solid  font-['Instrument_Sans',sans-serif]">
+              <a href="#" className="text-[#3d3d3d] text-[14px] font-medium underline decoration-solid  font-['Instrument_Sans',sans-serif]">
                 Linkedin
               </a>
-              <a href="#" className="text-[#3d3d3d] text-[16px] underline decoration-solid font-['Instrument_Sans',sans-serif]">
+              <a href="#" className="text-[#3d3d3d] text-[14px] font-medium underline decoration-solid font-['Instrument_Sans',sans-serif]">
                 Email
               </a>
               <button className="flex gap-2.5 items-center justify-center pl-6 md:pl-8 pr-4 md:pr-6 py-2.5 rounded-full border border-[#323232]/40">

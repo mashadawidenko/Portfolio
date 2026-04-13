@@ -9,6 +9,7 @@ import CaseStudy from './case-study/app/App'
 import JTIStudy from './jti-study/app/App'
 import { ScrollToTop } from './Home/app/components/ScrollToTop'
 import Lenis from 'lenis'
+import { Analytics } from '@vercel/analytics/react'
 
 // Инициализация Lenis
 const lenis = new Lenis({
@@ -31,5 +32,6 @@ createRoot(document.getElementById('root')!).render(
       <Route path="/case-study" element={<CaseStudy />} />
       <Route path="/jti-study" element={<JTIStudy />} />
     </Routes>
+    <Analytics />
   </BrowserRouter>
 )
